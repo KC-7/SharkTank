@@ -12,23 +12,13 @@
     android:background="#b1f0c6">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to CarePear!"
-        android:textSize="35sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textStyle="normal|bold"
-        android:textColor="@android:color/background_dark" />
-
-    <TextView
         android:text="Are you a..."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:layout_marginTop="58dp"
         android:textSize="28sp"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -50,4 +40,17 @@
         android:layout_marginTop="38dp"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to CarePear!"
+        android:textSize="35sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView3" />
+
 </RelativeLayout>
