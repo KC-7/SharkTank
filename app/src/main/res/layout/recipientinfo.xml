@@ -30,19 +30,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Last name"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:textSize="14sp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginTop="24dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:text="Username"
         android:ems="10"
         android:id="@+id/editText4"
@@ -50,19 +37,6 @@
         android:layout_below="@+id/editText3"
         android:layout_alignLeft="@+id/editText3"
         android:layout_alignStart="@+id/editText3" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Password"
-        android:ems="10"
-        android:id="@+id/editText5"
-        android:textSize="14sp"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText4"
-        android:layout_alignStart="@+id/editText4"
-        android:layout_marginTop="24dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -168,5 +142,29 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textSize="16sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Last name"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:textSize="14sp"
+        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:textSize="14sp"
+        android:layout_below="@+id/editText4"
+        android:layout_alignLeft="@+id/editText4"
+        android:layout_alignStart="@+id/editText4" />
 
 </RelativeLayout>
