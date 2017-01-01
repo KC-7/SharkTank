@@ -68,14 +68,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Phone number"
+        android:text="Gender"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/editText16"
         android:textSize="14sp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/editText5"
-        android:layout_alignLeft="@+id/editText6"
-        android:layout_alignStart="@+id/editText6" />
+        android:layout_below="@+id/editText14"
+        android:layout_alignLeft="@+id/editText14"
+        android:layout_alignStart="@+id/editText14" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -85,8 +84,89 @@
         android:ems="10"
         android:id="@+id/editText6"
         android:textSize="14sp"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/editText5"
         android:layout_alignLeft="@+id/editText5"
-        android:layout_alignStart="@+id/editText5"
-        android:layout_marginTop="11dp" />
+        android:layout_alignStart="@+id/editText5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Phone number"
+        android:ems="10"
+        android:id="@+id/editText7"
+        android:textSize="14sp"
+        android:layout_below="@+id/editText6"
+        android:layout_alignLeft="@+id/editText6"
+        android:layout_alignStart="@+id/editText6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editText11"
+        android:layout_above="@+id/editText14"
+        android:layout_alignLeft="@+id/editText8"
+        android:layout_alignStart="@+id/editText8" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editText10"
+        android:layout_above="@+id/editText11"
+        android:layout_alignLeft="@+id/editText8"
+        android:layout_alignStart="@+id/editText8" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Birthday"
+        android:ems="10"
+        android:id="@+id/editText14"
+        android:textSize="14sp"
+        android:layout_below="@+id/editText7"
+        android:layout_alignLeft="@+id/editText7"
+        android:layout_alignStart="@+id/editText7" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Address"
+        android:ems="10"
+        android:id="@+id/editText17"
+        android:textSize="14sp"
+        android:layout_below="@+id/editText16"
+        android:layout_alignLeft="@+id/editText16"
+        android:layout_alignStart="@+id/editText16" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Address (cont.)"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:textSize="14sp"
+        android:layout_below="@+id/editText17"
+        android:layout_alignLeft="@+id/editText17"
+        android:layout_alignStart="@+id/editText17" />
+
+    <Button
+        android:text="Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginTop="17dp"
+        android:id="@+id/button2"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="16sp" />
+
 </RelativeLayout>
