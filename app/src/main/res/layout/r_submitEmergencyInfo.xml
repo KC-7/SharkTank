@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="Family Contact Information"
+        android:text="Emergency Contact Information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -82,9 +82,9 @@
         android:text="Finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="33dp"
         android:id="@+id/button5"
-        android:textSize="16sp"
+        android:textSize="22sp"
         android:layout_above="@+id/textView"
         android:layout_alignRight="@+id/textView4"
         android:layout_alignEnd="@+id/textView4" />

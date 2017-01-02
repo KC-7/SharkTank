@@ -57,15 +57,6 @@
         android:layout_alignLeft="@+id/checkBox7"
         android:layout_alignStart="@+id/checkBox7" />
 
-    <CheckBox
-        android:text="Miscellaneous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox6"
-        android:layout_below="@+id/checkBox8"
-        android:layout_alignLeft="@+id/checkBox8"
-        android:layout_alignStart="@+id/checkBox8" />
-
     <TextView
         android:text="Posts:"
         android:layout_width="wrap_content"
@@ -77,4 +68,13 @@
         android:layout_below="@+id/checkBox6"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="Miscellaneous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox6"
+        android:layout_below="@+id/checkBox8"
+        android:layout_alignLeft="@+id/checkBox8"
+        android:layout_alignStart="@+id/checkBox8" />
 </RelativeLayout>
