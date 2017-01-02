@@ -40,10 +40,21 @@
         android:text="Log out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="82dp"
+        android:layout_marginBottom="67dp"
         android:id="@+id/button13"
         android:textSize="20sp"
         android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView34"
+        android:layout_alignStart="@+id/textView34" />
+
+    <TextView
+        android:text="View posts**"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:id="@+id/textView34"
+        android:textSize="24sp"
+        android:layout_below="@+id/textView25"
         android:layout_alignLeft="@+id/textView25"
         android:layout_alignStart="@+id/textView25" />
 </RelativeLayout>
