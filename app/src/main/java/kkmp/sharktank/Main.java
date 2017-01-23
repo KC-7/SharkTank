@@ -19,7 +19,8 @@ public class Main extends AppCompatActivity {
     }
 
     public void clickedButton_recipient(View view) {
-
+            final Intent intent = new Intent(this, R_Submit_Info.class);
+            startActivity(intent);
     }
 
     public void clickedButton_login(View view) {

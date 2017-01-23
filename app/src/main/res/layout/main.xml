@@ -51,11 +51,10 @@
         android:id="@+id/recipient_button"
         android:layout_marginTop="14dp"
         android:textSize="35sp"
-        android:layout_below="@+id/caregiver_button"
-        android:layout_centerHorizontal="true"
         android:onClick="clickedButton_recipient"
-        android:enabled="false" />
-
+        android:layout_below="@+id/caregiver_button"
+        android:layout_alignLeft="@+id/caregiver_button"
+        android:layout_alignStart="@+id/caregiver_button" />
 
 
 </RelativeLayout>

@@ -87,5 +87,7 @@
         android:textSize="22sp"
         android:layout_above="@+id/textView"
         android:layout_alignRight="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4" />
+        android:layout_alignEnd="@+id/textView4"
+        android:onClick = "clickedButton_Efinish"
+        />
 </RelativeLayout>
