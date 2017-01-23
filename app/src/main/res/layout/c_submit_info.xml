@@ -8,8 +8,8 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/email2"
-        android:layout_alignRight="@+id/title"
-        android:layout_alignEnd="@+id/title"
+        android:layout_alignRight="@+id/title_text"
+        android:layout_alignEnd="@+id/title_text"
         android:layout_marginRight="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginTop="80dp" />
@@ -145,7 +145,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="18dp"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/title_text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -154,7 +154,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
-        android:id="@+id/title"
+        android:id="@+id/title_text"
         android:textSize="23sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
