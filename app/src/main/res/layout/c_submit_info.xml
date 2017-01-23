@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email2"
+        android:layout_alignRight="@+id/title"
+        android:layout_alignEnd="@+id/title"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="80dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/phone2"
+        android:layout_below="@+id/email2"
+        android:layout_alignLeft="@+id/ssn_field"
+        android:layout_alignStart="@+id/ssn_field"
+        android:layout_marginTop="100dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Last name"
+        android:ems="10"
+        android:id="@+id/editText32"
+        android:textSize="14sp"
+        android:layout_below="@+id/firstname_field"
+        android:layout_alignLeft="@+id/firstname_field"
+        android:layout_alignStart="@+id/firstname_field" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Username"
+        android:ems="10"
+        android:id="@+id/username_field"
+        android:textSize="14sp"
+        android:layout_below="@+id/editText32"
+        android:layout_alignLeft="@+id/editText32"
+        android:layout_alignStart="@+id/editText32" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:ems="10"
+        android:id="@+id/password_field"
+        android:textSize="14sp"
+        android:layout_below="@+id/username_field"
+        android:layout_alignLeft="@+id/username_field"
+        android:layout_alignStart="@+id/username_field" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Email"
+        android:ems="10"
+        android:id="@+id/email_field"
+        android:textSize="14sp"
+        android:layout_below="@+id/password_field"
+        android:layout_alignLeft="@+id/password_field"
+        android:layout_alignStart="@+id/password_field" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Phone number"
+        android:ems="10"
+        android:id="@+id/phone_field"
+        android:textSize="14sp"
+        android:layout_below="@+id/email_field"
+        android:layout_alignLeft="@+id/email_field"
+        android:layout_alignStart="@+id/email_field" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Address"
+        android:ems="10"
+        android:id="@+id/address_field"
+        android:textSize="14sp"
+        android:layout_below="@+id/phone_field"
+        android:layout_alignLeft="@+id/phone_field"
+        android:layout_alignStart="@+id/phone_field" />
+
+    <Button
+        android:text="Finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finish_button"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/birthday_field"
+        android:layout_toRightOf="@+id/phone2"
+        android:layout_toEndOf="@+id/phone2"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:onClick="clickedButton_finish" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Social Security Number"
+        android:ems="10"
+        android:id="@+id/ssn_field"
+        android:textSize="14sp"
+        android:layout_below="@+id/address_field"
+        android:layout_alignLeft="@+id/address_field"
+        android:layout_alignStart="@+id/address_field" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Birthday"
+        android:ems="10"
+        android:id="@+id/birthday_field"
+        android:textSize="14sp"
+        android:layout_below="@+id/ssn_field"
+        android:layout_alignLeft="@+id/ssn_field"
+        android:layout_alignStart="@+id/ssn_field" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="First name"
+        android:ems="10"
+        android:id="@+id/firstname_field"
+        android:textSize="14sp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Personal Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:id="@+id/title"
+        android:textSize="23sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
