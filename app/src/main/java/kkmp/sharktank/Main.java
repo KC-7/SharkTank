@@ -22,4 +22,8 @@ public class Main extends AppCompatActivity {
 
     }
 
+    public void clickedButton_login(View view) {
+
+    }
+
 }
