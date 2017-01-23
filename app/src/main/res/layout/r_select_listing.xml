@@ -2,4 +2,75 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
+        android:text="[Name/Age/Gender]"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView37"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView35"
+        android:layout_alignLeft="@+id/textView35"
+        android:layout_alignStart="@+id/textView35" />
+
+    <TextView
+        android:text="[Time Avaliable]"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:id="@+id/textView38"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView37"
+        android:layout_alignLeft="@+id/textView37"
+        android:layout_alignStart="@+id/textView37" />
+
+    <TextView
+        android:text="[Summary]"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView39"
+        android:textSize="18sp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/textView38"
+        android:layout_alignLeft="@+id/textView38"
+        android:layout_alignStart="@+id/textView38" />
+
+    <Button
+        android:text="Select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/button19"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Listing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="53dp"
+        android:id="@+id/textView35"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="[Tags selected**]"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView40"
+        android:textSize="18sp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_alignBaseline="@+id/textView35"
+        android:layout_alignBottom="@+id/textView35"
+        android:layout_toRightOf="@+id/textView35"
+        android:layout_toEndOf="@+id/textView35" />
+
 </RelativeLayout>
