@@ -3,20 +3,6 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="Thank you for submitting!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/thanks_text"
-        android:layout_marginTop="50dp"
-        android:textSize="32sp"
-        android:textStyle="normal|italic"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:text="We will contact you once you have passed the screening process."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,5 +16,19 @@
         android:layout_below="@+id/thanks_text"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Thank you for submitting!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/thanks_text"
+        android:layout_marginTop="54dp"
+        android:textSize="32sp"
+        android:textStyle="normal|italic"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

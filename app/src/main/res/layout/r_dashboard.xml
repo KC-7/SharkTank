@@ -28,17 +28,6 @@
         android:layout_alignStart="@+id/makeRequest_button"
         android:onClick="clickedButton_browseListings (R_Dashboard)" />
 
-    <Button
-        android:text="Make a service request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/makeRequest_button"
-        android:layout_marginTop="46dp"
-        android:textSize="24sp"
-        android:layout_below="@+id/myAccount_text"
-        android:layout_centerHorizontal="true"
-        android:onClick="clickedButton_makeRequest (R_Dashboard)" />
-
     <TextView
         android:text="Hello,**"
         android:layout_width="wrap_content"
@@ -50,4 +39,36 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/makeRequest_button"
         android:layout_alignStart="@+id/makeRequest_button" />
+
+    <Button
+        android:text="Notifications**"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:background="@color/colorAccent"
+        android:layout_below="@+id/myAccount_text"
+        android:layout_alignLeft="@+id/makeRequest_button"
+        android:layout_alignStart="@+id/makeRequest_button"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:text="Rate my CarePear!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:textSize="14sp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
+
+    <Button
+        android:text="Make a service request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/makeRequest_button"
+        android:layout_marginTop="57dp"
+        android:textSize="24sp"
+        android:onClick="clickedButton_makeRequest (R_Dashboard)"
+        android:layout_below="@+id/button4"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
