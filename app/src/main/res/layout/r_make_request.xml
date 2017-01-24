@@ -62,20 +62,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Additional comments:"
-        android:ems="10"
-        android:id="@+id/editText39"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/editText30"
-        android:layout_alignLeft="@+id/editText30"
-        android:layout_alignStart="@+id/editText30" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:text="Time available"
         android:ems="10"
         android:id="@+id/editText30"
@@ -86,11 +72,39 @@
         android:layout_alignStart="@+id/textView30"
         android:layout_marginTop="26dp" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Additional comments:"
+        android:ems="10"
+        android:id="@+id/editText39"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/editText3"
+        android:layout_alignLeft="@+id/editText30"
+        android:layout_alignStart="@+id/editText30" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Contact Information:"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/editText30"
+        android:layout_alignLeft="@+id/editText30"
+        android:layout_alignStart="@+id/editText30" />
+
     <Button
         android:text="Post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="18dp"
         android:id="@+id/button15"
         android:textSize="20sp"
         android:layout_alignParentBottom="true"

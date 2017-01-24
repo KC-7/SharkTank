@@ -76,12 +76,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Additional comments:"
+        android:text="Contact Information:"
         android:ems="10"
-        android:id="@+id/editText20"
+        android:id="@+id/editText2"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="32dp"
         android:layout_below="@+id/editText22"
         android:layout_alignLeft="@+id/editText22"
         android:layout_alignStart="@+id/editText22" />
@@ -90,11 +89,25 @@
         android:text="Post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="20dp"
         android:id="@+id/button9"
         android:textSize="20sp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/checkBox4"
         android:layout_toEndOf="@+id/checkBox4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Additional comments:"
+        android:ems="10"
+        android:id="@+id/editText20"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/editText2"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_marginTop="26dp" />
 
 </RelativeLayout>
