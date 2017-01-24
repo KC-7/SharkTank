@@ -12,24 +12,12 @@
     tools:context="kkmp.sharktank.Main"
     android:background="#b1f0c6">
 
-    <TextView
-        android:text="Register as a:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/areYou_text"
-        android:textSize="28sp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/welcome_text"
-        android:layout_alignLeft="@+id/recipient_button"
-        android:layout_alignStart="@+id/recipient_button" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/pears"
         android:layout_below="@+id/login_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="0dp"
         android:id="@+id/imageView" />
 
     <TextView
@@ -49,7 +37,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/login_button"
         android:textSize="35sp"
-        android:onClick="clickedButton_login (Main)"
+        android:onClick="clickedButton_login"
         android:layout_marginTop="9dp"
         android:layout_below="@+id/orIfAccount"
         android:layout_centerHorizontal="true" />
@@ -82,11 +70,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/orIfAccount"
-        android:textSize="28sp"
+        android:textSize="25sp"
         android:layout_marginTop="19dp"
         android:layout_below="@+id/recipient_button"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignRight="@+id/welcome_text"
+        android:layout_alignEnd="@+id/welcome_text" />
+
+    <TextView
+        android:text="Register as a:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/areYou_text"
+        android:textSize="25sp"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/welcome_text"
+        android:layout_alignRight="@+id/login_button"
+        android:layout_alignEnd="@+id/login_button" />
 
 
 </RelativeLayout>

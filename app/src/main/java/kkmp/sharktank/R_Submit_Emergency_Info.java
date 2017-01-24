@@ -15,7 +15,7 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
     }
 
     public void clickedButton_finish(View view){
-        Intent intent = new Intent(this, R_Dashboard.class);
+        final Intent intent = new Intent(this, R_Dashboard.class);
         startActivity(intent);
     }
 }

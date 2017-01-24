@@ -6,11 +6,11 @@
         android:text="My Account**"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView18"
+        android:id="@+id/myAccount_text"
         android:textSize="30sp"
         android:textIsSelectable="false"
         android:layout_marginTop="38dp"
-        android:layout_below="@+id/textView17"
+        android:layout_below="@+id/hello_text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="12dp"
@@ -20,32 +20,34 @@
         android:text="Browse service listings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button10"
+        android:id="@+id/browseListings_button"
         android:layout_marginTop="42dp"
         android:textSize="24sp"
-        android:layout_below="@+id/button11"
-        android:layout_alignLeft="@+id/button11"
-        android:layout_alignStart="@+id/button11" />
+        android:layout_below="@+id/makeRequest_button"
+        android:layout_alignLeft="@+id/makeRequest_button"
+        android:layout_alignStart="@+id/makeRequest_button"
+        android:onClick="clickedButton_browseListings (R_Dashboard)" />
 
     <Button
         android:text="Make a service request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button11"
+        android:id="@+id/makeRequest_button"
         android:layout_marginTop="46dp"
         android:textSize="24sp"
-        android:layout_below="@+id/textView18"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/myAccount_text"
+        android:layout_centerHorizontal="true"
+        android:onClick="clickedButton_makeRequest (R_Dashboard)" />
 
     <TextView
         android:text="Hello,**"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
-        android:id="@+id/textView17"
+        android:id="@+id/hello_text"
         android:textSize="25sp"
         android:textIsSelectable="false"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/button11"
-        android:layout_alignStart="@+id/button11" />
+        android:layout_alignLeft="@+id/makeRequest_button"
+        android:layout_alignStart="@+id/makeRequest_button" />
 </RelativeLayout>

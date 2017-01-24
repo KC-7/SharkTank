@@ -66,18 +66,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Gender"
-        android:ems="10"
-        android:id="@+id/gender"
-        android:textSize="14sp"
-        android:layout_below="@+id/birthday"
-        android:layout_alignLeft="@+id/birthday"
-        android:layout_alignStart="@+id/birthday" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:text="Email"
         android:ems="10"
         android:id="@+id/email"
@@ -85,14 +73,6 @@
         android:layout_below="@+id/password"
         android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/email2"
-        android:layout_above="@+id/phone2" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -109,14 +89,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/phone2"
-        android:layout_above="@+id/birthday"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="Birthday"
         android:ems="10"
@@ -125,6 +97,18 @@
         android:layout_below="@+id/phone"
         android:layout_alignLeft="@+id/phone"
         android:layout_alignStart="@+id/phone" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Gender"
+        android:ems="10"
+        android:id="@+id/gender"
+        android:textSize="14sp"
+        android:layout_below="@+id/birthday"
+        android:layout_alignLeft="@+id/birthday"
+        android:layout_alignStart="@+id/birthday" />
 
     <EditText
         android:layout_width="wrap_content"

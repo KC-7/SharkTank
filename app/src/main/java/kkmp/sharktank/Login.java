@@ -17,8 +17,13 @@ public class Login extends AppCompatActivity {
         String accountType = "asdjlasdja";
         switch (accountType) {
             case "caregiver":
+                break;
             case "recipient":
+                break;
             case "nonexistent":
+                break;
+            default:
+                break;
         }
 
     }

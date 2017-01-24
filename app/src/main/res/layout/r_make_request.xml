@@ -72,17 +72,6 @@
         android:layout_alignLeft="@+id/editText30"
         android:layout_alignStart="@+id/editText30" />
 
-    <Button
-        android:text="Post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:id="@+id/button15"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/checkBox13"
-        android:layout_toEndOf="@+id/checkBox13" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,4 +85,15 @@
         android:layout_alignLeft="@+id/textView30"
         android:layout_alignStart="@+id/textView30"
         android:layout_marginTop="26dp" />
+
+    <Button
+        android:text="Post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/button15"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/checkBox13"
+        android:layout_toEndOf="@+id/checkBox13" />
 </RelativeLayout>
