@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="First name"
+        android:hint="First name"
         android:ems="10"
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
@@ -29,7 +29,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:hint="Email"
         android:ems="10"
         android:id="@+id/email_field"
         android:layout_below="@+id/lastname_field"
@@ -38,7 +38,7 @@
         android:inputType="textEmailAddress" />
 
     <TextView
-        android:text="*Your family will be contacted during an emergency"
+        android:hint="*Your family will be contacted during an emergency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Last name"
+        android:hint="Last name"
         android:ems="10"
         android:id="@+id/lastname_field"
         android:layout_below="@+id/firstname_field"
@@ -61,7 +61,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone number"
+        android:hint="Phone number"
         android:ems="10"
         android:id="@+id/phone_field"
         android:inputType="phone"
@@ -70,7 +70,7 @@
         android:layout_alignStart="@+id/email_field" />
 
     <Button
-        android:text="Finish"
+        android:hint="Finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
