@@ -31,7 +31,7 @@ public class C_Submit_Info extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
-    EditText firstname_field, lastname_field, username_field, password_field, email_field,
+    private EditText firstname_field, lastname_field, username_field, password_field, email_field,
             phone_field, address_field, ssn_field, birthday_field;
 
     @Override
@@ -106,8 +106,8 @@ public class C_Submit_Info extends AppCompatActivity {
 
     private class getListShaAndContent extends AsyncTask<String, Void, String> {
 
-        public String accountFileString;
-        public getListShaAndContent(String acct) {
+        private String accountFileString;
+        private getListShaAndContent(String acct) {
             accountFileString = acct;
         }
 

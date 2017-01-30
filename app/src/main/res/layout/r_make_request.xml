@@ -9,7 +9,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="23dp"
-        android:id="@+id/textView30"
+        android:id="@+id/tags_title"
         android:textSize="24sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -19,72 +19,55 @@
         android:text="Medicine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox15"
+        android:id="@+id/medicine_box"
         android:textSize="25sp"
-        android:layout_below="@+id/checkBox14"
-        android:layout_alignLeft="@+id/checkBox14"
-        android:layout_alignStart="@+id/checkBox14" />
+        android:layout_below="@+id/groceries_box"
+        android:layout_alignLeft="@+id/groceries_box"
+        android:layout_alignStart="@+id/groceries_box" />
 
     <CheckBox
         android:text="Groceries"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox14"
+        android:id="@+id/groceries_box"
         android:textSize="25sp"
         android:layout_marginLeft="31dp"
         android:layout_marginStart="31dp"
         android:layout_marginTop="13dp"
-        android:layout_below="@+id/textView30"
-        android:layout_alignLeft="@+id/textView30"
-        android:layout_alignStart="@+id/textView30" />
+        android:layout_below="@+id/tags_title"
+        android:layout_alignLeft="@+id/tags_title"
+        android:layout_alignStart="@+id/tags_title" />
 
     <CheckBox
         android:text="Meals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox16"
+        android:id="@+id/meals_box"
         android:textSize="25sp"
-        android:layout_below="@+id/checkBox15"
-        android:layout_alignLeft="@+id/checkBox15"
-        android:layout_alignStart="@+id/checkBox15" />
+        android:layout_below="@+id/medicine_box"
+        android:layout_alignLeft="@+id/medicine_box"
+        android:layout_alignStart="@+id/medicine_box" />
 
     <CheckBox
         android:text="Other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox13"
+        android:id="@+id/other_box"
         android:textSize="25sp"
-        android:layout_below="@+id/checkBox16"
-        android:layout_alignLeft="@+id/checkBox16"
-        android:layout_alignStart="@+id/checkBox16" />
+        android:layout_below="@+id/meals_box"
+        android:layout_alignLeft="@+id/meals_box"
+        android:layout_alignStart="@+id/meals_box" />
 
-    <EditText
+    <Button
+        android:text="Post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Timings"
-        android:ems="10"
-        android:id="@+id/editText30"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/checkBox13"
-        android:layout_alignLeft="@+id/textView30"
-        android:layout_alignStart="@+id/textView30"
-        android:layout_marginTop="26dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Request Title"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/editText30"
-        android:layout_alignLeft="@+id/editText30"
-        android:layout_alignStart="@+id/editText30" />
+        android:layout_marginBottom="18dp"
+        android:id="@+id/post_button"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/other_box"
+        android:layout_toEndOf="@+id/other_box" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -95,19 +78,35 @@
         android:id="@+id/editText39"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/editText3"
+        android:layout_above="@+id/post_button"
         android:layout_alignLeft="@+id/editText30"
-        android:layout_alignStart="@+id/editText30" />
+        android:layout_alignStart="@+id/editText30"
+        android:layout_marginBottom="55dp" />
 
-    <Button
-        android:text="Post"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:id="@+id/button15"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/checkBox13"
-        android:layout_toEndOf="@+id/checkBox13" />
+        android:inputType="textPersonName"
+        android:hint="Request Title"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/other_box"
+        android:layout_alignLeft="@+id/editText30"
+        android:layout_alignStart="@+id/editText30"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Timings"
+        android:ems="10"
+        android:id="@+id/editText30"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/editText39"
+        android:layout_alignLeft="@+id/tags_title"
+        android:layout_alignStart="@+id/tags_title" />
 </RelativeLayout>

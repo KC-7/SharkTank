@@ -9,24 +9,11 @@
         android:layout_marginLeft="25dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="23dp"
-        android:id="@+id/textView11"
+        android:id="@+id/tags_text"
         android:textSize="24sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:text="Groceries"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/groceries_box"
-        android:textSize="25sp"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp"
-        android:layout_below="@+id/textView11"
-        android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11"
-        android:layout_marginTop="12dp" />
 
     <CheckBox
         android:text="Medicine"
@@ -58,19 +45,18 @@
         android:layout_alignStart="@+id/meals_box"
         android:textSize="25sp" />
 
-    <EditText
+    <CheckBox
+        android:text="Groceries"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Timings"
-        android:ems="10"
-        android:id="@+id/editText22"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/other_box"
-        android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11" />
+        android:id="@+id/groceries_box"
+        android:textSize="25sp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tags_text"
+        android:layout_alignLeft="@+id/tags_text"
+        android:layout_alignStart="@+id/tags_text" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -78,23 +64,27 @@
         android:inputType="textPersonName"
         android:hint="Listing Title"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/title_field"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_below="@+id/editText22"
-        android:layout_alignLeft="@+id/editText22"
-        android:layout_alignStart="@+id/editText22" />
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/other_box"
+        android:layout_alignLeft="@+id/tags_text"
+        android:layout_alignStart="@+id/tags_text" />
 
-    <Button
-        android:text="Post"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/button9"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/other_box"
-        android:layout_toEndOf="@+id/other_box" />
+        android:inputType="textPersonName"
+        android:hint="Timings"
+        android:ems="10"
+        android:id="@+id/timings_field"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/title_field"
+        android:layout_alignLeft="@+id/title_field"
+        android:layout_alignStart="@+id/title_field" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -102,11 +92,24 @@
         android:inputType="textPersonName"
         android:hint="Comments"
         android:ems="10"
-        android:id="@+id/editText20"
+        android:id="@+id/comments_field"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2" />
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/timings_field"
+        android:layout_alignLeft="@+id/timings_field"
+        android:layout_alignStart="@+id/timings_field" />
+
+    <Button
+        android:text="Post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/post_button"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/other_box"
+        android:layout_toEndOf="@+id/other_box"
+        android:onClick="clickedButton_post" />
 
 </RelativeLayout>
