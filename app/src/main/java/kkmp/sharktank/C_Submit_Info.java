@@ -31,7 +31,7 @@ public class C_Submit_Info extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
-    public EditText firstname_field, lastname_field, username_field, password_field, email_field,
+    EditText firstname_field, lastname_field, username_field, password_field, email_field,
             phone_field, address_field, ssn_field, birthday_field;
 
     @Override
