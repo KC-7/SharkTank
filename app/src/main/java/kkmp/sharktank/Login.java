@@ -1,8 +1,12 @@
 package kkmp.sharktank;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,17 +14,15 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Login extends AppCompatActivity {
 
-    EditText username_field;
-    EditText password_field;
+    EditText username_field, password_field;
+
+    private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,36 +33,56 @@ public class Login extends AppCompatActivity {
         password_field = (EditText) findViewById(R.id.password_field);
     }
 
-    public void clickedButton_login(View view) {
-        new getRequest().execute("https://raw.githubusercontent.com/KC-7/CarePear-Data/master/account/list");
+    public void clickedButton_loginToAcct(View view) {
+        new accountTask().execute(API + "account/list");
     }
 
-    private void accountType(JSONObject list) {
-        String username_entry = username_field.getText().toString();
+    private void handleAccountEntry(JSONObject list) {
+        String username_entry = username_field.getText().toString().trim();
 
-        // If the list of accounts contains the username
+        // If the list of accounts contains the username_entry
         if (list.has(username_entry)) {
 
-            String password_entry = password_field.getText().toString();
+            String password_entry = password_field.getText().toString().trim();
 
             try {
-                String pass = list.getString(username_entry);
+                String pass = list.getJSONObject(username_entry).getString("password");
                 if (pass.equals(password_entry)) {
-                    toast("Logging in...");
+                    toastS("Logging in...");
+                    String type = list.getJSONObject(username_entry).getString("type");
+
+                    SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = session.edit();
+                    editor.putString("username", username_entry);
+                    editor.apply();
+
+                    switch (type) {
+                        case "caregiver":
+                            Intent intent = new Intent(this, C_Dashboard.class);
+                            startActivity(intent);
+                            break;
+                        case "recipient":
+                            intent = new Intent(this, R_Dashboard.class);
+                            startActivity(intent);
+                            break;
+                        default:
+                            throw new AssertionError(type);
+                    }
+
                 } else {
-                    toast("Wrong password.");
+                    toastL("Wrong password.");
                 }
             } catch (JSONException e) {
-                toast("ERROR: User Existent, Password Nonexistent.");
+                toastL("ERROR: User Existent, Password Nonexistent.");
                 e.printStackTrace();
             }
 
         } else {
-            toast("Wrong username.");
+            toastL("Wrong username.");
         }
     }
 
-    private class getRequest extends AsyncTask<String, Void, String> {
+    private class accountTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... urlString) {
@@ -71,11 +93,13 @@ public class Login extends AppCompatActivity {
                 connection.setRequestMethod("GET");
 
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
-                    return readStream(connection.getInputStream());
+                    return Core.readStream(connection.getInputStream());
+                } else {
+                    throw new AssertionError();
                 }
 
             } catch (IOException e) {
-                toast("ERROR: Connection failure.");
+                toastL("ERROR: Connection failure.");
                 e.printStackTrace();
             }
             return null;
@@ -84,40 +108,26 @@ public class Login extends AppCompatActivity {
         @Override
         protected void onPostExecute(String response) {
             try {
-                final JSONObject list = new JSONObject(response);
-                accountType(list);
+                final JSONObject listDetails = new JSONObject(response);
+
+                String encodedContent = listDetails.getString("content").replace("\n","");
+                String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
+                JSONObject listJson = new JSONObject(list);
+
+                handleAccountEntry(listJson);
             } catch (JSONException e) {
-                toast("ERROR: Retrieval error.");
+                toastL("ERROR: Retrieval parsing error.");
                 e.printStackTrace();
             }
         }
     }
 
-    private String readStream(InputStream in) {
-        BufferedReader reader = null;
-        StringBuffer response = new StringBuffer();
-        try {
-            reader = new BufferedReader(new InputStreamReader(in));
-            String line = "";
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return response.toString();
+    private void toastL(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-    private void toast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+    private void toastS(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }

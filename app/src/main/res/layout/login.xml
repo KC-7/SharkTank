@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/login_button"
         android:textSize="25sp"
-        android:onClick="clickedButton_login"
+        android:onClick="clickedButton_loginToAcct"
         android:layout_marginBottom="64dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />

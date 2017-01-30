@@ -23,7 +23,7 @@
         android:inputType="textPersonName"
         android:hint="Last name"
         android:ems="10"
-        android:id="@+id/editText32"
+        android:id="@+id/lastname_field"
         android:textSize="14sp"
         android:layout_below="@+id/firstname_field"
         android:layout_alignLeft="@+id/firstname_field"
@@ -37,9 +37,9 @@
         android:ems="10"
         android:id="@+id/username_field"
         android:textSize="14sp"
-        android:layout_below="@+id/editText32"
-        android:layout_alignLeft="@+id/editText32"
-        android:layout_alignStart="@+id/editText32" />
+        android:layout_below="@+id/lastname_field"
+        android:layout_alignLeft="@+id/lastname_field"
+        android:layout_alignStart="@+id/lastname_field" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -103,14 +103,14 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:hint="Social Security Number"
         android:ems="10"
         android:id="@+id/ssn_field"
         android:textSize="14sp"
         android:layout_below="@+id/address_field"
         android:layout_alignLeft="@+id/address_field"
-        android:layout_alignStart="@+id/address_field" />
+        android:layout_alignStart="@+id/address_field"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="wrap_content"

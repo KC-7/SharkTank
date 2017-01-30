@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by kchugh on 1/23/2017 at 10:28 AM
  */
 
-public class R_Browse_Listings extends AppCompatActivity {
+public class R_Browse_Listing extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -2,6 +2,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
+        android:text="Tags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="23dp"
+        android:id="@+id/textView30"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="Medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox15"
+        android:textSize="25sp"
+        android:layout_below="@+id/checkBox14"
+        android:layout_alignLeft="@+id/checkBox14"
+        android:layout_alignStart="@+id/checkBox14" />
+
     <CheckBox
         android:text="Groceries"
         android:layout_width="wrap_content"
@@ -26,7 +49,7 @@
         android:layout_alignStart="@+id/checkBox15" />
 
     <CheckBox
-        android:text="Miscellaneous"
+        android:text="Other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/checkBox13"
@@ -35,34 +58,11 @@
         android:layout_alignLeft="@+id/checkBox16"
         android:layout_alignStart="@+id/checkBox16" />
 
-    <CheckBox
-        android:text="Medicine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox15"
-        android:textSize="25sp"
-        android:layout_below="@+id/checkBox14"
-        android:layout_alignLeft="@+id/checkBox14"
-        android:layout_alignStart="@+id/checkBox14" />
-
-    <TextView
-        android:text="Tags"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="23dp"
-        android:id="@+id/textView30"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Time available"
+        android:hint="Timings"
         android:ems="10"
         android:id="@+id/editText30"
         android:textSize="24sp"
@@ -76,13 +76,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Additional comments:"
+        android:hint="Request Title"
         android:ems="10"
-        android:id="@+id/editText39"
+        android:id="@+id/editText3"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/editText3"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/editText30"
         android:layout_alignLeft="@+id/editText30"
         android:layout_alignStart="@+id/editText30" />
 
@@ -90,13 +90,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Contact Information:"
+        android:hint="Comments"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/editText39"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/editText30"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/editText3"
         android:layout_alignLeft="@+id/editText30"
         android:layout_alignStart="@+id/editText30" />
 

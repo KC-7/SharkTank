@@ -22,7 +22,7 @@ public class R_Dashboard extends AppCompatActivity {
     }
 
     public void clickedButton_browseListings(View view) {
-        final Intent intent = new Intent(this, R_Browse_Listings.class);
+        final Intent intent = new Intent(this, R_Browse_Listing.class);
         startActivity(intent);
     }
 

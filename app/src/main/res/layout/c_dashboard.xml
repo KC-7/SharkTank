@@ -3,13 +3,13 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="Hello,**"
+        android:text="Hello, **"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="56dp"
-        android:id="@+id/textView10"
+        android:id="@+id/hello"
         android:textSize="25sp"
         android:textIsSelectable="false"
         android:layout_alignParentLeft="true"
@@ -23,7 +23,8 @@
         android:layout_marginTop="26dp"
         android:layout_below="@+id/button8"
         android:layout_alignLeft="@+id/button8"
-        android:layout_alignStart="@+id/button8" />
+        android:layout_alignStart="@+id/button8"
+        android:onClick="clickedButton_browseRequest" />
 
     <TextView
         android:text="My Account**"
@@ -34,8 +35,8 @@
         android:textIsSelectable="false"
         android:layout_alignBaseline="@+id/button8"
         android:layout_alignBottom="@+id/button8"
-        android:layout_alignLeft="@+id/textView10"
-        android:layout_alignStart="@+id/textView10" />
+        android:layout_alignLeft="@+id/hello"
+        android:layout_alignStart="@+id/hello" />
 
     <Button
         android:text="Make a service listing"
@@ -45,9 +46,10 @@
         android:layout_marginTop="17dp"
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
-        android:layout_below="@+id/textView10"
+        android:layout_below="@+id/hello"
         android:layout_toRightOf="@+id/textView9"
-        android:layout_toEndOf="@+id/textView9" />
+        android:layout_toEndOf="@+id/textView9"
+        android:onClick="clickedButton_makeListing" />
 
     <Button
         android:text="Notifications**"

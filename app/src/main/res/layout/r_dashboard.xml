@@ -26,7 +26,7 @@
         android:layout_below="@+id/makeRequest_button"
         android:layout_alignLeft="@+id/makeRequest_button"
         android:layout_alignStart="@+id/makeRequest_button"
-        android:onClick="clickedButton_browseListings (R_Dashboard)" />
+        android:onClick="clickedButton_browseListings" />
 
     <TextView
         android:text="Hello,**"
@@ -68,7 +68,7 @@
         android:id="@+id/makeRequest_button"
         android:layout_marginTop="57dp"
         android:textSize="24sp"
-        android:onClick="clickedButton_makeRequest (R_Dashboard)"
+        android:onClick="clickedButton_makeRequest"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

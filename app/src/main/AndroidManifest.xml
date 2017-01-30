@@ -22,12 +22,15 @@
 
         <activity android:name=".C_Submit_Info"/>
         <activity android:name=".C_Submitted_Info"/>
+        <activity android:name=".C_Dashboard"/>
+        <activity android:name=".C_Browse_Request"/>
+        <activity android:name=".C_Make_Listing"/>
 
         <activity android:name=".R_Submit_Info"/>
         <activity android:name=".R_Submit_Emergency_Info"/>
         <activity android:name=".R_Dashboard"/>
         <activity android:name=".R_Make_Request"/>
-        <activity android:name=".R_Browse_Listings"/>
+        <activity android:name=".R_Browse_Listing"/>
 
     </application>
 
