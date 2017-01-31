@@ -56,17 +56,6 @@
         android:layout_marginTop="27dp" />
 
     <Button
-        android:text="Browse service listings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/browseListings_button"
-        android:textSize="24sp"
-        android:onClick="clickedButton_browseListings"
-        android:layout_marginBottom="53dp"
-        android:layout_above="@+id/button9"
-        android:layout_centerHorizontal="true" />
-
-    <Button
         android:text="Make a service request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,5 +77,16 @@
         android:layout_below="@+id/hello_text"
         android:layout_alignLeft="@+id/button9"
         android:layout_alignStart="@+id/button9" />
+
+    <Button
+        android:text="Browse service listings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/browseListings_button"
+        android:textSize="24sp"
+        android:onClick="clickedButton_browseListings"
+        android:layout_below="@+id/makeRequest_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp" />
 
 </RelativeLayout>
