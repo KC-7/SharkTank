@@ -41,7 +41,7 @@
         android:layout_alignStart="@+id/makeRequest_button" />
 
     <Button
-        android:text="Notifications**"
+        android:text="Notifications"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button5"
