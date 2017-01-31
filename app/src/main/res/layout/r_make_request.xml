@@ -2,6 +2,47 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Request Title"
+        android:ems="10"
+        android:id="@+id/title_field"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/other_box"
+        android:layout_alignLeft="@+id/timings_field"
+        android:layout_alignStart="@+id/timings_field"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Timings"
+        android:ems="10"
+        android:id="@+id/timings_field"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/comments_field"
+        android:layout_alignLeft="@+id/tags_title"
+        android:layout_alignStart="@+id/tags_title" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Comments"
+        android:ems="10"
+        android:id="@+id/comments_field"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/post_button"
+        android:layout_alignLeft="@+id/timings_field"
+        android:layout_alignStart="@+id/timings_field"
+        android:layout_marginBottom="55dp" />
+
     <CheckBox
         android:text="Medicine"
         android:layout_width="wrap_content"
@@ -56,47 +97,6 @@
         android:layout_toRightOf="@+id/other_box"
         android:layout_toEndOf="@+id/other_box"
         android:onClick="clickedButton_post" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Comments"
-        android:ems="10"
-        android:id="@+id/comments_field"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_above="@+id/post_button"
-        android:layout_alignLeft="@+id/timings_field"
-        android:layout_alignStart="@+id/timings_field"
-        android:layout_marginBottom="55dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Request Title"
-        android:ems="10"
-        android:id="@+id/title_field"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/other_box"
-        android:layout_alignLeft="@+id/timings_field"
-        android:layout_alignStart="@+id/timings_field"
-        android:layout_marginTop="29dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Timings"
-        android:ems="10"
-        android:id="@+id/timings_field"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_above="@+id/comments_field"
-        android:layout_alignLeft="@+id/tags_title"
-        android:layout_alignStart="@+id/tags_title" />
 
     <TextView
         android:text="Tags"

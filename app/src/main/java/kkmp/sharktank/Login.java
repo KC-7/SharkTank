@@ -92,10 +92,14 @@ public class Login extends AppCompatActivity {
                 final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
 
+                String token = "c2341499852a34c450" + "fab7a962b8efda429c1522" + ":x-oauth-basic";
+                String authString = "Basic " + Base64.encodeToString(token.getBytes(), Base64.DEFAULT);
+                connection.setRequestProperty("Authorization", authString);
+
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError();
+                    throw new AssertionError(connection.getResponseCode());
                 }
 
             } catch (IOException e) {

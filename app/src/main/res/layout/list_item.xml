@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="Listing Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="26dp"
+        android:id="@+id/listing_title"
+        android:textSize="27sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="Listing Tags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:id="@+id/listing_tags"
+        android:textStyle="normal|bold"
+        android:textSize="20sp"
+        android:layout_below="@+id/listing_title"
+        android:layout_alignLeft="@+id/listing_title"
+        android:layout_alignStart="@+id/listing_title" />
+
+    <TextView
+        android:text="Listing Timings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:id="@+id/listing_timings"
+        android:textSize="20sp"
+        android:layout_below="@+id/listing_tags"
+        android:layout_alignLeft="@+id/listing_tags"
+        android:layout_alignStart="@+id/listing_tags"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>
