@@ -101,6 +101,7 @@ public class C_Submit_Info extends AppCompatActivity {
             final Intent intent = new Intent();
             intent.setClassName("kkmp.sharktank", "kkmp.sharktank.C_Submitted_Info");
             startActivity(intent);
+            finish();
         }
     }
 

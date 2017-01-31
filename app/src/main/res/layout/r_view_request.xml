@@ -3,15 +3,15 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="Listing Tags"
+        android:text="Request Tags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listing_tags"
+        android:id="@+id/request_tags"
         android:textSize="22sp"
         android:layout_marginTop="12dp"
-        android:layout_below="@+id/listing_title"
-        android:layout_alignLeft="@+id/listing_title"
-        android:layout_alignStart="@+id/listing_title"
+        android:layout_below="@+id/request_title"
+        android:layout_alignLeft="@+id/request_title"
+        android:layout_alignStart="@+id/request_title"
         android:textStyle="normal|bold" />
 
     <TextView
@@ -34,45 +34,45 @@
         android:textSize="20sp"
         android:textStyle="normal|italic"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/listing_comments"
-        android:layout_alignLeft="@+id/listing_comments"
-        android:layout_alignStart="@+id/listing_comments" />
+        android:layout_below="@+id/request_comments"
+        android:layout_alignLeft="@+id/request_comments"
+        android:layout_alignStart="@+id/request_comments" />
 
     <TextView
-        android:text="Listing Timings"
+        android:text="Request Timings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listing_timings"
+        android:id="@+id/request_timings"
         android:textSize="22sp"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/listing_tags"
+        android:layout_below="@+id/request_tags"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp" />
 
     <TextView
-        android:text="Listing Comments"
+        android:text="Request Comments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listing_comments"
+        android:id="@+id/request_comments"
         android:textSize="18sp"
         android:layout_marginTop="19dp"
-        android:layout_below="@+id/listing_timings"
-        android:layout_alignLeft="@+id/listing_timings"
-        android:layout_alignStart="@+id/listing_timings" />
+        android:layout_below="@+id/request_timings"
+        android:layout_alignLeft="@+id/request_timings"
+        android:layout_alignStart="@+id/request_timings" />
 
     <TextView
-        android:text="Listing Title"
+        android:text="Request Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listing_title"
+        android:id="@+id/request_title"
         android:textSize="30sp"
         android:layout_marginTop="14dp"
         android:textColor="@android:color/black"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/listing_timings"
-        android:layout_alignStart="@+id/listing_timings" />
+        android:layout_alignLeft="@+id/request_timings"
+        android:layout_alignStart="@+id/request_timings" />
 
     <Button
         android:text="Back to Dashboard"

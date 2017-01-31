@@ -71,6 +71,7 @@ public class R_Submit_Info extends AppCompatActivity {
         final Intent intent = new Intent(this, R_Submit_Emergency_Info.class);
         intent.putExtra("bundle", bundle);
         startActivity(intent);
+        finish();
     }
 
     private class usernameTask extends AsyncTask<String, Void, String> {

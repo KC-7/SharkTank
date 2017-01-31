@@ -25,10 +25,12 @@
         <activity android:name=".C_Browse_Request" />
         <activity android:name=".C_Select_Request" />
         <activity android:name=".C_Make_Listing" />
+        <activity android:name=".C_View_Listing" />
         <activity android:name=".R_Submit_Info" />
         <activity android:name=".R_Submit_Emergency_Info" />
         <activity android:name=".R_Dashboard" />
         <activity android:name=".R_Make_Request" />
+        <activity android:name=".R_View_Request" />
         <activity android:name=".R_Browse_Listing" />
         <activity android:name=".R_Select_Listing" />
         <activity android:name=".R_RateCarepear" />

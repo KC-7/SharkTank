@@ -1,6 +1,7 @@
 package kkmp.sharktank;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 /**
  * Created by kchugh on 1/26/2017 at 11:51 PM
@@ -132,6 +134,32 @@ public class C_Make_Listing extends AppCompatActivity {
         protected void onPostExecute(String listDetails) {
             toastL("Posted listing!");
 
+            String tags = "";
+            CheckBox[] boxes = {groceries, medicine, meals, other};
+            for (CheckBox c : boxes) {
+                if (c.isChecked()) {
+                    String name = c.getText().toString().trim();
+                    tags += (name + " ");
+                }
+            }
+            tags = tags.trim();
+
+            String titleString = title.getText().toString().trim();
+            String timingsString = timings.getText().toString().trim();
+            String commentsString = comments.getText().toString().trim();
+
+            HashMap<String, String> listingMap = new HashMap<>();
+            listingMap.put("title", titleString);
+            listingMap.put("tags", tags);
+            listingMap.put("timings", timingsString);
+            listingMap.put("comments", commentsString);
+            listingMap.put("username", getSharedPreferences("session", Context.MODE_PRIVATE).getString("username", "user"));
+
+            final Intent intent = new Intent();
+            intent.setClassName("kkmp.sharktank", "kkmp.sharktank.C_View_Listing");
+            intent.putExtra("listingMap", listingMap);
+            startActivity(intent);
+            finish();
         }
     }
 
@@ -240,10 +268,6 @@ public class C_Make_Listing extends AppCompatActivity {
 
     private void toastS(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    private void msg (String message) {
-       // Snackbar.make(this, message, Snackbar.LENGTH_LONG).setAction("Action", null).show();
     }
 
 }

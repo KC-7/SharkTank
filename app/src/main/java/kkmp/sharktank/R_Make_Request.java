@@ -1,6 +1,7 @@
 package kkmp.sharktank;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 /**
  * Created by kchugh on 1/23/2017 at 10:18 AM
@@ -131,6 +133,33 @@ public class R_Make_Request extends AppCompatActivity {
         @Override
         protected void onPostExecute(String listDetails) {
             toastL("Posted request!");
+
+            String tags = "";
+            CheckBox[] boxes = {groceries, medicine, meals, other};
+            for (CheckBox c : boxes) {
+                if (c.isChecked()) {
+                    String name = c.getText().toString().trim();
+                    tags += (name + " ");
+                }
+            }
+            tags = tags.trim();
+
+            String titleString = title.getText().toString().trim();
+            String timingsString = timings.getText().toString().trim();
+            String commentsString = comments.getText().toString().trim();
+
+            HashMap<String, String> requestMap = new HashMap<>();
+            requestMap.put("title", titleString);
+            requestMap.put("tags", tags);
+            requestMap.put("timings", timingsString);
+            requestMap.put("comments", commentsString);
+            requestMap.put("username", getSharedPreferences("session", Context.MODE_PRIVATE).getString("username", "user"));
+
+            final Intent intent = new Intent();
+            intent.setClassName("kkmp.sharktank", "kkmp.sharktank.R_View_Request");
+            intent.putExtra("requestMap", requestMap);
+            startActivity(intent);
+            finish();
         }
     }
 

@@ -18,77 +18,77 @@ import java.net.URL;
 import java.util.HashMap;
 
 /**
- * Created by kchugh on 1/31/2017 at 2:34 PM
+ * Created by kchugh on 1/31/2017 at 4:53 PM
  */
 
-public class C_View_Listing extends AppCompatActivity {
+public class R_View_Request extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.c_view_listing);
+        setContentView(R.layout.r_view_request);
 
         final Intent intent = getIntent();
-        final HashMap<String, String> listingMap = (HashMap<String, String>)intent.getSerializableExtra("listingMap");
+        final HashMap<String, String> requestMap = (HashMap<String, String>)intent.getSerializableExtra("requestMap");
 
-        TextView title = (TextView)findViewById(R.id.listing_title);
-        TextView tags = (TextView)findViewById(R.id.listing_tags);
-        TextView timings = (TextView)findViewById(R.id.listing_timings);
-        TextView comments = (TextView)findViewById(R.id.listing_comments);
+        TextView title = (TextView)findViewById(R.id.request_title);
+        TextView tags = (TextView)findViewById(R.id.request_tags);
+        TextView timings = (TextView)findViewById(R.id.request_timings);
+        TextView comments = (TextView)findViewById(R.id.request_comments);
 
-        String titleString = listingMap.get("title");
-        String tagsString = "Tags: " + listingMap.get("tags").trim().replace(" ",", ");
-        String timingsString = "Timings: " + listingMap.get("timings");
-        String commentsString = "Details: " + listingMap.get("comments");
+        String titleString = requestMap.get("title");
+        String tagsString = "Tags: " + requestMap.get("tags").trim().replace(" ",", ");
+        String timingsString = "Timings: " + requestMap.get("timings");
+        String commentsString = "Details: " + requestMap.get("comments");
 
         title.setText(titleString);
         tags.setText(tagsString);
         timings.setText(timingsString);
         comments.setText(commentsString);
 
-        String usernameString = listingMap.get("username");
-        new getCaregiverFileTask().execute(API + "account/caregiver/" + usernameString);
+        String usernameString = requestMap.get("username");
+        new getRecipientFileTask().execute(API + "account/recipient/" + usernameString);
     }
 
     public void clickedButton_back(View view) {
-        final Intent intent = new Intent(this, C_Dashboard.class);
+        final Intent intent = new Intent(this, R_Dashboard.class);
         startActivity(intent);
         finish();
     }
 
-    private void processCaregiverFile(JSONObject caregiverFile) {
+    private void processRecipientFile(JSONObject recipientFile) {
 
         try {
-            String fnString = caregiverFile.getString("firstname");
-            String lnString = caregiverFile.getString("lastname");
-            String age = caregiverFile.getString("birthday");
+            String fnString = recipientFile.getString("firstname");
+            String lnString = recipientFile.getString("lastname");
+            String age = recipientFile.getString("birthday");
 
             String nagString = fnString + " " + lnString + ", " + age;
             TextView nag = (TextView)findViewById(R.id.name_age_gender);
             nag.setText(nagString);
 
             String contactInfoString = "";
-            if (!caregiverFile.getString("email").isEmpty()) {
-                contactInfoString += caregiverFile.getString("email") + "\n";
+            if (!recipientFile.getString("email").isEmpty()) {
+                contactInfoString += recipientFile.getString("email") + "\n";
             }
-            if (!caregiverFile.getString("phone").isEmpty()) {
-                contactInfoString += caregiverFile.getString("phone") + "\n";
+            if (!recipientFile.getString("phone").isEmpty()) {
+                contactInfoString += recipientFile.getString("phone") + "\n";
             }
-            if (!caregiverFile.getString("address").isEmpty()) {
-                contactInfoString += caregiverFile.getString("address") + "\n";
+            if (!recipientFile.getString("address").isEmpty()) {
+                contactInfoString += recipientFile.getString("address") + "\n";
             }
 
             TextView info = (TextView)findViewById(R.id.contact_info);
             info.setText(contactInfoString);
         } catch (JSONException e) {
             e.printStackTrace();
-            toastL("ERROR: Caregiver file retrieval error.");
+            toastL("ERROR: Recipient file retrieval error.");
         }
 
     }
 
-    private class getCaregiverFileTask extends AsyncTask<String, Void, String> {
+    private class getRecipientFileTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... urlString) {
@@ -123,7 +123,7 @@ public class C_View_Listing extends AppCompatActivity {
                 String file = new String(Base64.decode(encodedContent, Base64.DEFAULT));
                 JSONObject fileJson = new JSONObject(file);
 
-                processCaregiverFile(fileJson);
+                processRecipientFile(fileJson);
 
             } catch (JSONException e) {
                 toastL("ERROR: Retrieval parsing error.");

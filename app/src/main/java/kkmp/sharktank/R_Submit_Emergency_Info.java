@@ -1,6 +1,8 @@
 package kkmp.sharktank;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -61,8 +63,16 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
     }
 
     private void goToDashboard() {
+
+        SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = session.edit();
+        editor.putString("username", bundle.getString(USERNAME));
+        editor.putString("type", "recipient");
+        editor.apply();
+
         final Intent intent = new Intent(this, R_Dashboard.class);
         startActivity(intent);
+        finish();
     }
 
     public void clickedButton_finish(View view) {
