@@ -14,17 +14,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Additional comments:"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView18"
-        android:layout_alignStart="@+id/textView18" />
-
     <Button
         android:text="Submit"
         android:layout_width="wrap_content"
@@ -42,7 +31,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar"
         android:layout_below="@+id/textView18"
-        android:layout_alignRight="@+id/button14"
-        android:layout_alignEnd="@+id/button14"
-        android:layout_marginTop="54dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Additional comments:"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_below="@+id/ratingBar"
+        android:layout_alignLeft="@+id/textView18"
+        android:layout_alignStart="@+id/textView18"
+        android:layout_marginTop="31dp" />
 </RelativeLayout>
