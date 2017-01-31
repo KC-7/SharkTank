@@ -28,7 +28,7 @@
         android:layout_marginBottom="27dp" />
 
     <Button
-        android:text="Browse senior requests"
+        android:text="Browse recipient requests"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button7"
