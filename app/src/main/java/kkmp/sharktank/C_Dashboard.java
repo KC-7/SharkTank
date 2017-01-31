@@ -32,4 +32,11 @@ public class C_Dashboard extends AppCompatActivity {
         final Intent intent = new Intent(this, C_Browse_Request.class);
         startActivity(intent);
     }
+
+    public void clickedButton_logout(View view) {
+        final Intent intent = new Intent(this, Main.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

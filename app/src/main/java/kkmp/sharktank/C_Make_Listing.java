@@ -131,6 +131,7 @@ public class C_Make_Listing extends AppCompatActivity {
         @Override
         protected void onPostExecute(String listDetails) {
             toastL("Posted listing!");
+
         }
     }
 
@@ -177,7 +178,7 @@ public class C_Make_Listing extends AppCompatActivity {
                 listJson.put(listingFile.getString(CODE));          // puts listing code into list
                 String updatedContent = listJson.toString(2);       // gets new list's content
 
-                toastS("Registering...");
+                toastS("Registering listing...");
                 new addListingToListTask().execute(API + "listing/list", sha, updatedContent, listingFile.getString(CODE));
 
             } catch (JSONException e) {
@@ -239,6 +240,10 @@ public class C_Make_Listing extends AppCompatActivity {
 
     private void toastS(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void msg (String message) {
+       // Snackbar.make(this, message, Snackbar.LENGTH_LONG).setAction("Action", null).show();
     }
 
 }

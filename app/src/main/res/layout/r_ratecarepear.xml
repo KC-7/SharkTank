@@ -3,34 +3,6 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView4"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:id="@+id/textView17" />
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:layout_below="@+id/textView18"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp" />
-
-    <TextView
-        android:text="CarePear:** [drop down]"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:id="@+id/textView4"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/textView18"
-        android:layout_alignStart="@+id/textView18" />
-
-    <TextView
         android:text="Rating:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,5 +35,14 @@
         android:textSize="18sp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText" />
+        android:layout_toEndOf="@+id/editText"
+        android:onClick="clickedButton_submit" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_above="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp" />
 </RelativeLayout>

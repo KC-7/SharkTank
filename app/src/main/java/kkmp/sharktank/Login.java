@@ -58,15 +58,15 @@ public class Login extends AppCompatActivity {
 
                     switch (type) {
                         case "caregiver":
+                            editor.putString("type", "caregiver");
                             Intent intent = new Intent(this, C_Dashboard.class);
                             startActivity(intent);
                             break;
                         case "recipient":
+                            editor.putString("type", "recipient");
                             intent = new Intent(this, R_Dashboard.class);
                             startActivity(intent);
                             break;
-                        default:
-                            throw new AssertionError(type);
                     }
 
                 } else {

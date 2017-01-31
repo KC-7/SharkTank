@@ -3,82 +3,85 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="[Summary]"
+        android:text="Request Tags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textSize="18sp"
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5" />
+        android:id="@+id/request_tags"
+        android:textSize="22sp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/request_title"
+        android:layout_alignLeft="@+id/request_title"
+        android:layout_alignStart="@+id/request_title"
+        android:textStyle="normal|bold" />
 
     <TextView
-        android:text="Listing"
+        android:text="Contact Info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView7"
-        android:textSize="18sp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="59dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="[Tags selected**]"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView8"
-        android:textSize="18sp"
-        android:layout_alignBaseline="@+id/textView7"
-        android:layout_alignBottom="@+id/textView7"
-        android:layout_toRightOf="@+id/textView7"
-        android:layout_toEndOf="@+id/textView7"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp" />
-
-    <TextView
-        android:text="[Name/Age/Gender]"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:textSize="18sp"
-        android:layout_marginTop="22dp"
-        android:layout_below="@+id/textView7"
-        android:layout_alignLeft="@+id/textView7"
-        android:layout_alignStart="@+id/textView7" />
-
-    <TextView
-        android:text="[Time Avaliable]"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:textSize="18sp"
+        android:id="@+id/contact_info"
+        android:textSize="20sp"
         android:layout_marginTop="25dp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:textStyle="normal|italic"
+        android:layout_below="@+id/name_age_gender"
+        android:layout_alignLeft="@+id/name_age_gender"
+        android:layout_alignStart="@+id/name_age_gender" />
 
     <Button
         android:text="Select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button10"
-        android:layout_marginBottom="92dp"
         android:textSize="18sp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="clickedButton_select" />
 
     <TextView
-        android:text="[Contact Information]"
+        android:text="First Last, Age #, Gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView6"
+        android:id="@+id/name_age_gender"
+        android:textSize="20sp"
+        android:textStyle="normal|italic"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/request_comments"
+        android:layout_alignLeft="@+id/request_comments"
+        android:layout_alignStart="@+id/request_comments" />
+
+    <TextView
+        android:text="Request Timings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_timings"
+        android:textSize="22sp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/request_tags"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp" />
+
+    <TextView
+        android:text="Request Comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_comments"
         android:textSize="18sp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/request_timings"
+        android:layout_alignLeft="@+id/request_timings"
+        android:layout_alignStart="@+id/request_timings" />
+
+    <TextView
+        android:text="Request Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_title"
+        android:textSize="30sp"
+        android:layout_marginTop="14dp"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/request_timings"
+        android:layout_alignStart="@+id/request_timings" />
 </RelativeLayout>

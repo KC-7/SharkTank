@@ -33,4 +33,15 @@ public class R_Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clickedButton_rateMyCarepear(View view) {
+        final Intent intent = new Intent(this, R_RateCarepear.class);
+        startActivity(intent);
+    }
+
+    public void clickedButton_logout(View view) {
+        final Intent intent = new Intent(this, Main.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
