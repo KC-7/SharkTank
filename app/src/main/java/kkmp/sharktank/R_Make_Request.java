@@ -177,7 +177,7 @@ public class R_Make_Request extends AppCompatActivity {
                 listJson.put(requestFile.getString(CODE));          // puts request code into list
                 String updatedContent = listJson.toString(2);       // gets new list's content
 
-                toastS("Registering...");
+                toastS("Registering request...");
                 new addRequestToListTask().execute(API + "request/list", sha, updatedContent, requestFile.getString(CODE));
 
             } catch (JSONException e) {

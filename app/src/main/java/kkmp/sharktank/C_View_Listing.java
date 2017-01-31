@@ -18,16 +18,16 @@ import java.net.URL;
 import java.util.HashMap;
 
 /**
- * Created by kchugh on 1/31/2017 at 12:50 AM
+ * Created by kchugh on 1/31/2017 at 2:34 PM
  */
 
-public class R_Select_Listing extends AppCompatActivity {
+public class C_View_Listing extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.r_select_listing);
+        setContentView(R.layout.c_view_listing);
 
         final Intent intent = getIntent();
         final HashMap<String, String> listingMap = (HashMap<String, String>)intent.getSerializableExtra("listingMap");

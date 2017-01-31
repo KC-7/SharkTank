@@ -2,18 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <TextView
-        android:text="Hello, **"
+    <Button
+        android:text="Browse senior requests"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="56dp"
-        android:id="@+id/hello"
-        android:textSize="25sp"
-        android:textIsSelectable="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/button7"
+        android:onClick="clickedButton_browseRequest"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="134dp" />
 
     <Button
         android:text="Notifications"
@@ -21,9 +19,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/button11"
         android:background="@color/colorAccent"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/hello"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:text="Hello, **"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hello"
+        android:textSize="25sp"
+        android:textIsSelectable="false"
+        android:layout_marginRight="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/button11"
+        android:layout_toLeftOf="@+id/button11"
+        android:layout_toStartOf="@+id/button11" />
 
     <Button
         android:text="Make a service listing"
@@ -32,19 +47,20 @@
         android:id="@+id/button8"
         android:onClick="clickedButton_makeListing"
         android:textSize="24sp"
-        android:layout_below="@+id/button11"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Browse senior listings"
+        android:text="LOG OUT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button7"
-        android:onClick="clickedButton_browseRequest"
-        android:textSize="24sp"
-        android:layout_marginTop="53dp"
-        android:layout_below="@+id/button8"
-        android:layout_alignLeft="@+id/button8"
-        android:layout_alignStart="@+id/button8" />
+        android:layout_marginBottom="20dp"
+        android:id="@+id/logout_button"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/background_light"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/button7"
+        android:layout_alignStart="@+id/button7"
+        android:onClick="clickedButton_logout" />
+
 </RelativeLayout>
