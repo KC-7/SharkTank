@@ -2,31 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <Button
-        android:text="Select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button10"
-        android:layout_marginBottom="49dp"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="35dp"
-        android:layout_marginEnd="35dp" />
-
-    <TextView
-        android:text="Listing Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listing_title"
-        android:textSize="30sp"
-        android:layout_marginTop="14dp"
-        android:textColor="@android:color/black"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/listing_timings"
-        android:layout_alignStart="@+id/listing_timings" />
-
     <TextView
         android:text="Listing Tags"
         android:layout_width="wrap_content"
@@ -38,17 +13,6 @@
         android:layout_alignLeft="@+id/listing_title"
         android:layout_alignStart="@+id/listing_title"
         android:textStyle="normal|bold" />
-
-    <TextView
-        android:text="Listing Comments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listing_comments"
-        android:textSize="18sp"
-        android:layout_marginTop="31dp"
-        android:layout_below="@+id/listing_timings"
-        android:layout_alignLeft="@+id/name_age_gender"
-        android:layout_alignStart="@+id/name_age_gender" />
 
     <TextView
         android:text="Contact Info"
@@ -69,12 +33,10 @@
         android:id="@+id/name_age_gender"
         android:textSize="20sp"
         android:textStyle="normal|italic"
-        android:layout_marginRight="9dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/listing_comments"
-        android:layout_toLeftOf="@+id/button10"
-        android:layout_toStartOf="@+id/button10" />
+        android:layout_alignLeft="@+id/listing_comments"
+        android:layout_alignStart="@+id/listing_comments" />
 
     <TextView
         android:text="Listing Timings"
@@ -82,8 +44,44 @@
         android:layout_height="wrap_content"
         android:id="@+id/listing_timings"
         android:textSize="22sp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="14dp"
         android:layout_below="@+id/listing_tags"
-        android:layout_alignLeft="@+id/listing_comments"
-        android:layout_alignStart="@+id/listing_comments" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp" />
+
+    <TextView
+        android:text="Listing Comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listing_comments"
+        android:textSize="18sp"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/listing_timings"
+        android:layout_alignLeft="@+id/listing_timings"
+        android:layout_alignStart="@+id/listing_timings" />
+
+    <TextView
+        android:text="Listing Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listing_title"
+        android:textSize="30sp"
+        android:layout_marginTop="14dp"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/listing_timings"
+        android:layout_alignStart="@+id/listing_timings" />
+
+    <Button
+        android:text="Select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button10"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="clickedButton_select" />
 </RelativeLayout>

@@ -23,13 +23,18 @@ public class R_Dashboard extends AppCompatActivity {
         hello.setText("Hello, " + session.getString("username", "user"));
     }
 
-    public void clickedButton_makeRequest(View view) {
+    public void clicketedButton_makeRequest(View view) {
         final Intent intent = new Intent(this, R_Make_Request.class);
         startActivity(intent);
     }
 
     public void clickedButton_browseListings(View view) {
         final Intent intent = new Intent(this, R_Browse_Listing.class);
+        startActivity(intent);
+    }
+
+    public void clickedButton_rateMyCarepear(View view) {
+        final Intent intent = new Intent(this, R_RateCarepear.class);
         startActivity(intent);
     }
 

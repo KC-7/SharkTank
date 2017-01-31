@@ -3,32 +3,6 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="My Account**"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/myAccount_text"
-        android:textSize="30sp"
-        android:textIsSelectable="false"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/hello_text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp" />
-
-    <Button
-        android:text="Browse service listings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/browseListings_button"
-        android:layout_marginTop="42dp"
-        android:textSize="24sp"
-        android:layout_below="@+id/makeRequest_button"
-        android:layout_alignLeft="@+id/makeRequest_button"
-        android:layout_alignStart="@+id/makeRequest_button"
-        android:onClick="clickedButton_browseListings" />
-
-    <TextView
         android:text="Hello,**"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,34 +15,63 @@
         android:layout_alignStart="@+id/makeRequest_button" />
 
     <Button
-        android:text="Notifications"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        android:background="@color/colorAccent"
-        android:layout_below="@+id/myAccount_text"
-        android:layout_alignLeft="@+id/makeRequest_button"
-        android:layout_alignStart="@+id/makeRequest_button"
-        android:layout_marginTop="20dp" />
-
-    <Button
         android:text="Rate my CarePear!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button4"
         android:textSize="14sp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/button5"
-        android:layout_alignStart="@+id/button5" />
+        android:layout_alignBaseline="@+id/button5"
+        android:layout_alignBottom="@+id/button5"
+        android:layout_alignLeft="@+id/hello_text"
+        android:layout_alignStart="@+id/hello_text"
+        android:onClick="clickedButton_rateMyCarepear" />
+
+    <Button
+        android:text="Notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="81dp"
+        android:layout_below="@+id/hello_text"
+        android:layout_alignRight="@+id/makeRequest_button"
+        android:layout_alignEnd="@+id/makeRequest_button"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp" />
 
     <Button
         android:text="Make a service request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/makeRequest_button"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="92dp"
         android:textSize="24sp"
         android:onClick="clickedButton_makeRequest"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Browse service listings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/browseListings_button"
+        android:layout_marginTop="56dp"
+        android:textSize="24sp"
+        android:onClick="clickedButton_browseListings"
+        android:layout_below="@+id/makeRequest_button"
+        android:layout_alignLeft="@+id/makeRequest_button"
+        android:layout_alignStart="@+id/makeRequest_button" />
+
+    <Button
+        android:text="EMERGENCY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button9"
+        android:textStyle="normal|bold"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:layout_alignBaseline="@+id/hello_text"
+        android:layout_alignBottom="@+id/hello_text"
+        android:layout_alignRight="@+id/makeRequest_button"
+        android:layout_alignEnd="@+id/makeRequest_button" />
 </RelativeLayout>

@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login" />
+        <activity android:name=".SuccessScreen"/>
         <activity android:name=".C_Submit_Info" />
         <activity android:name=".C_Submitted_Info" />
         <activity android:name=".C_Dashboard" />
