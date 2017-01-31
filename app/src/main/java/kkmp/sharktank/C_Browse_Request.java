@@ -50,6 +50,7 @@ public class C_Browse_Request extends AppCompatActivity {
                         final Intent intent = new Intent();
                         intent.putExtra("requestMap", requestMap);
                         intent.setClassName("kkmp.sharktank", "kkmp.sharktank.C_Select_Request");
+                        startActivity(intent);
                     }
                 }
         );

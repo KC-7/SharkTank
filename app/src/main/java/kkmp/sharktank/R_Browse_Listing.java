@@ -1,5 +1,6 @@
 package kkmp.sharktank;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -45,7 +46,11 @@ public class R_Browse_Listing extends AppCompatActivity {
                 new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        parent.getItemAtPosition(position);
+                        HashMap<String, String> requestMap = (HashMap<String, String>)parent.getItemAtPosition(position);
+                        final Intent intent = new Intent();
+                        intent.putExtra("listingMap", requestMap);
+                        intent.setClassName("kkmp.sharktank", "kkmp.sharktank.R_Select_Listing");
+                        startActivity(intent);
                     }
                 }
         );
@@ -59,6 +64,8 @@ public class R_Browse_Listing extends AppCompatActivity {
             listingMap.put("title", listingFile.getString("title"));
             listingMap.put("tags", listingFile.getString("tags"));
             listingMap.put("timings", listingFile.getString("timings"));
+            listingMap.put("comments", listingFile.getString("comments"));
+            listingMap.put("username", listingFile.getString("username"));
 
             listings.add(listingMap);
 
