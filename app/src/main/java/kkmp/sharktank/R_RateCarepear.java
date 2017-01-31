@@ -2,6 +2,7 @@ package kkmp.sharktank;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 /**
  * Created by kchugh on 1/31/2017 at 2:00 AM
@@ -14,8 +15,8 @@ public class R_RateCarepear extends AppCompatActivity {
         setContentView(R.layout.r_ratecarepear);
     }
 
-    public void clickedButton_submit() {
-        this.finish();
+    public void clickedButton_submit(View view) {
+        finish();
     }
 
 }
