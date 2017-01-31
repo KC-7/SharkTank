@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="kkmp.sharktank.Main"
-    android:background="#b1f0c6">
+    android:background="#C0EBA4">
 
     <TextView
         android:layout_width="wrap_content"
@@ -84,9 +84,10 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/pears"
         android:id="@+id/imageView"
-        android:layout_below="@+id/login_button"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/welcome_text"
-        android:layout_alignStart="@+id/welcome_text" />
+        android:layout_alignStart="@+id/welcome_text"
+        android:layout_below="@+id/login_button" />
 
 
 </RelativeLayout>
