@@ -67,8 +67,6 @@ public class Login extends AppCompatActivity {
                             intent = new Intent(this, R_Dashboard.class);
                             startActivity(intent);
                             break;
-                        default:
-                            throw new AssertionError(type);
                     }
 
                 } else {
