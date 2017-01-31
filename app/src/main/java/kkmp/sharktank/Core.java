@@ -16,7 +16,7 @@ public class Core {
 
     public static String readStream(InputStream in) {
         BufferedReader reader = null;
-        StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
         try {
             reader = new BufferedReader(new InputStreamReader(in));
             String line = "";

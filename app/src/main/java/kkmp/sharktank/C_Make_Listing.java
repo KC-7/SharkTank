@@ -67,7 +67,9 @@ public class C_Make_Listing extends AppCompatActivity {
             String titleString = title.getText().toString().trim();
             String timingsString = timings.getText().toString().trim();
             String commentsString = comments.getText().toString().trim();
-            final int code = Integer.parseInt(String.valueOf((titleString + timingsString + commentsString + tags).hashCode()).substring(0, 6));
+
+            String merged = titleString + timingsString + commentsString + tags + String.valueOf(System.currentTimeMillis());
+            final int code = Integer.parseInt(String.valueOf(Math.abs((merged).hashCode())).substring(0, 7));
 
             listingFile.put(TITLE, titleString);
             listingFile.put(TIMINGS, timingsString);

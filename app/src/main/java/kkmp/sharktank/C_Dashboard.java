@@ -19,7 +19,6 @@ public class C_Dashboard extends AppCompatActivity {
         setContentView(R.layout.c_dashboard);
 
         SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
-
         TextView hello = (TextView)findViewById(R.id.hello);
         hello.setText("Hello, " + session.getString("username", "user"));
     }

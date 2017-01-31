@@ -2,19 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <TextView
-        android:text="Tags"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="23dp"
-        android:id="@+id/tags_title"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <CheckBox
         android:text="Medicine"
         android:layout_width="wrap_content"
@@ -67,7 +54,8 @@
         android:textSize="20sp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/other_box"
-        android:layout_toEndOf="@+id/other_box" />
+        android:layout_toEndOf="@+id/other_box"
+        android:onClick="clickedButton_post" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -75,12 +63,12 @@
         android:inputType="textPersonName"
         android:hint="Comments"
         android:ems="10"
-        android:id="@+id/editText39"
+        android:id="@+id/comments_field"
         android:textSize="24sp"
         android:textColor="@android:color/black"
         android:layout_above="@+id/post_button"
-        android:layout_alignLeft="@+id/editText30"
-        android:layout_alignStart="@+id/editText30"
+        android:layout_alignLeft="@+id/timings_field"
+        android:layout_alignStart="@+id/timings_field"
         android:layout_marginBottom="55dp" />
 
     <EditText
@@ -89,12 +77,12 @@
         android:inputType="textPersonName"
         android:hint="Request Title"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/title_field"
         android:textSize="24sp"
         android:textColor="@android:color/black"
         android:layout_below="@+id/other_box"
-        android:layout_alignLeft="@+id/editText30"
-        android:layout_alignStart="@+id/editText30"
+        android:layout_alignLeft="@+id/timings_field"
+        android:layout_alignStart="@+id/timings_field"
         android:layout_marginTop="29dp" />
 
     <EditText
@@ -103,10 +91,23 @@
         android:inputType="textPersonName"
         android:hint="Timings"
         android:ems="10"
-        android:id="@+id/editText30"
+        android:id="@+id/timings_field"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_above="@+id/editText39"
+        android:layout_above="@+id/comments_field"
         android:layout_alignLeft="@+id/tags_title"
         android:layout_alignStart="@+id/tags_title" />
+
+    <TextView
+        android:text="Tags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="23dp"
+        android:id="@+id/tags_title"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
