@@ -2,19 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <Button
-        android:text="LOG OUT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="38dp"
-        android:id="@+id/logout_button"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:textColor="@android:color/background_light"
-        android:onClick="clickedButton_logout"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/button7"
-        android:layout_alignStart="@+id/button7" />
-
     <TextView
         android:text="Hello, **"
         android:layout_width="wrap_content"
@@ -33,10 +20,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/button7"
         android:onClick="clickedButton_browseRequest"
-        android:textSize="24sp"
+        android:textSize="23sp"
         android:layout_marginBottom="92dp"
-        android:layout_above="@+id/logout_button"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/logout_button" />
 
     <Button
         android:text="Make a service listing"
@@ -44,7 +30,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button8"
         android:onClick="clickedButton_makeListing"
-        android:textSize="24sp"
+        android:textSize="23sp"
         android:layout_marginBottom="42dp"
         android:layout_above="@+id/button7"
         android:layout_centerHorizontal="true" />
@@ -59,5 +45,20 @@
         android:layout_above="@+id/button8"
         android:layout_alignRight="@+id/button8"
         android:layout_alignEnd="@+id/button8" />
+
+    <Button
+        android:text="LOG OUT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="57dp"
+        android:id="@+id/logout_button"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/background_light"
+        android:onClick="clickedButton_logout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/hello"
+        android:layout_alignEnd="@+id/hello"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
 
 </RelativeLayout>
