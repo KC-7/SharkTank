@@ -54,6 +54,69 @@ public class C_Select_Request extends AppCompatActivity {
     public void clickedButton_select(View view) {
         final Intent intent = new Intent(this, SuccessScreen.class);
         startActivity(intent);
+        
+        unregisterRequest();
+    }
+    
+    private void unregisterRequest() {
+        // call asynctask to get current list of requests
+        // use json to remove the request code
+        // asynctask to update the request
+    }
+    
+    private class getListShaAndContent extends AsyncTask<String, Void, String> {
+
+        private String accountFileString;
+        private getListShaAndContent(String acct) {
+            accountFileString = acct;
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            try {
+
+                final URL url = new URL(params[0]);
+                final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+
+                String token = "c2341499852a34c450" + "fab7a962b8efda429c1522" + ":x-oauth-basic";
+                String authString = "Basic " + Base64.encodeToString(token.getBytes(), Base64.DEFAULT);
+                connection.setRequestProperty("Authorization", authString);
+
+                if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
+                    return Core.readStream(connection.getInputStream());
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String response) {
+            try {
+                final JSONObject listDetails = new JSONObject(response);
+                String sha = listDetails.getString("sha");
+
+                String encodedContent = listDetails.getString("content").replace("\n","");
+                String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
+                JSONObject listJson = new JSONObject(list);
+                JSONObject accountFile = new JSONObject(accountFileString);
+                JSONObject passAndType = new JSONObject();
+                passAndType.put(PASSWORD, accountFile.getString(PASSWORD));
+                passAndType.put("type", "caregiver");
+                listJson.put(accountFile.getString(USERNAME), passAndType);
+                String updatedContent = listJson.toString(2);
+
+                toastS("Registering...");
+                new deleteAccountFromListTask().execute(API + "account/list", sha, updatedContent, accountFile.getString(USERNAME));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void processRecipientFile(JSONObject recipientFile) {
