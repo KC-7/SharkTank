@@ -201,7 +201,7 @@ public class R_Make_Request extends AppCompatActivity {
 
                 String encodedContent = listDetails.getString("content").replace("\n","");
                 String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
-                JSONArray listJson = new JSONArray(list);       // current request
+                JSONArray listJson = new JSONArray(list);       // current list
                 JSONObject requestFile = new JSONObject(requestFileString);     // request
                 listJson.put(requestFile.getString(CODE));          // puts request code into list
                 String updatedContent = listJson.toString(2);       // gets new list's content

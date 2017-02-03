@@ -15,16 +15,6 @@
         android:layout_marginBottom="27dp" />
 
     <Button
-        android:text="Browse recipient requests"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button7"
-        android:onClick="clickedButton_browseRequest"
-        android:textSize="23sp"
-        android:layout_marginBottom="92dp"
-        android:layout_above="@+id/logout_button" />
-
-    <Button
         android:text="Make a service listing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,18 +37,29 @@
         android:layout_alignEnd="@+id/button8" />
 
     <Button
+        android:text="Browse recipient requests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button7"
+        android:onClick="clickedButton_browseRequest"
+        android:textSize="23sp"
+        android:layout_marginBottom="96dp"
+        android:layout_above="@+id/logout_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
         android:text="LOG OUT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="57dp"
+        android:layout_marginBottom="33dp"
         android:id="@+id/logout_button"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:textColor="@android:color/background_light"
         android:onClick="clickedButton_logout"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/hello"
-        android:layout_alignEnd="@+id/hello"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp" />
+        android:layout_alignLeft="@+id/button7"
+        android:layout_alignStart="@+id/button7"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
 
 </RelativeLayout>

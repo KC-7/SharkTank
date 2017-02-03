@@ -3,21 +3,6 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
-        android:text="LOG OUT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/logout_button"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/hello_text"
-        android:layout_toStartOf="@+id/hello_text"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:textColor="@android:color/background_light"
-        android:onClick="clickedButton_logout" />
-
-    <Button
         android:text="EMERGENCY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,19 +14,6 @@
         android:layout_alignBottom="@+id/button4"
         android:layout_alignRight="@+id/makeRequest_button"
         android:layout_alignEnd="@+id/makeRequest_button" />
-
-    <Button
-        android:text="Rate my CarePear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button4"
-        android:textSize="16sp"
-        android:onClick="clickedButton_rateMyCarepear"
-        android:backgroundTint="#add8e6"
-        android:layout_alignBaseline="@+id/logout_button"
-        android:layout_alignBottom="@+id/logout_button"
-        android:layout_toRightOf="@+id/logout_button"
-        android:layout_toEndOf="@+id/logout_button" />
 
     <TextView
         android:text="Hello,**"
@@ -88,5 +60,32 @@
         android:layout_below="@+id/makeRequest_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp" />
+
+    <Button
+        android:text="Rate my CarePear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:textSize="16sp"
+        android:onClick="clickedButton_rateMyCarepear"
+        android:backgroundTint="#add8e6"
+        android:layout_below="@+id/browseListings_button"
+        android:layout_alignLeft="@+id/browseListings_button"
+        android:layout_alignStart="@+id/browseListings_button"
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:text="LOG OUT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout_button"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/background_light"
+        android:onClick="clickedButton_logout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
 
 </RelativeLayout>
