@@ -43,6 +43,7 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
     private Bundle bundle;
+    private JSONObject accountFile;
 
     EditText e_firstname_field, e_lastname_field, e_email_field, e_phone_field;
 
@@ -57,19 +58,13 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
 
         if (getIntent().hasExtra("bundle")) {
             bundle = getIntent().getBundleExtra("bundle");
-        } else {
-            throw new AssertionError("bundle");
         }
     }
 
     private void goToDashboard() {
 
         SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = session.edit();
-        editor.putString("username", bundle.getString(USERNAME));
-        editor.putString("type", "recipient");
-        editor.apply();
-
+        Core.loginAsRecipient(session, bundle.getString(USERNAME), accountFile);
         final Intent intent = new Intent(this, R_Dashboard.class);
         startActivity(intent);
         finish();
@@ -100,6 +95,7 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        this.accountFile = accountFile;
     }
 
     private class addAccountToListTask extends AsyncTask<String, Void, String> {

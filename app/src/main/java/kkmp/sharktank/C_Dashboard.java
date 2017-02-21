@@ -39,4 +39,8 @@ public class C_Dashboard extends AppCompatActivity {
         finish();
     }
 
+    public void clickedButton_emergency(View view) {
+
+    }
+
 }

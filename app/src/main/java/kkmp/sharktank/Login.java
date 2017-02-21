@@ -51,21 +51,16 @@ public class Login extends AppCompatActivity {
                     toastS("Logging in...");
                     String type = list.getJSONObject(username_entry).getString("type");
 
-                    SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = session.edit();
-                    editor.putString("username", username_entry);
-                    editor.apply();
-
+                    final SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
+                    Intent intent;
                     switch (type) {
                         case "caregiver":
-                            editor.putString("type", "caregiver");
-                            editor.apply();
-                            Intent intent = new Intent(this, C_Dashboard.class);
+                            Core.loginAsCaregiver(session, username_entry);
+                            intent = new Intent(this, C_Dashboard.class);
                             startActivity(intent);
                             break;
                         case "recipient":
-                            editor.putString("type", "recipient");
-                            editor.apply();
+                            Core.loginAsRecipient(session, username_entry);
                             intent = new Intent(this, R_Dashboard.class);
                             startActivity(intent);
                             break;

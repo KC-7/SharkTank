@@ -13,7 +13,8 @@
         android:layout_alignBaseline="@+id/button4"
         android:layout_alignBottom="@+id/button4"
         android:layout_alignRight="@+id/makeRequest_button"
-        android:layout_alignEnd="@+id/makeRequest_button" />
+        android:layout_alignEnd="@+id/makeRequest_button"
+        android:onClick="clickedButton_emergency" />
 
     <TextView
         android:text="Hello,**"
