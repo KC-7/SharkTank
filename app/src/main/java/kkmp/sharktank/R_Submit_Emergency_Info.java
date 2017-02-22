@@ -64,7 +64,7 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
     private void goToDashboard() {
 
         SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
-        Core.loginAsRecipient(session, bundle.getString(USERNAME), accountFile);
+        Core.loginAsRecipient(session, accountFile);
         final Intent intent = new Intent(this, R_Dashboard.class);
         startActivity(intent);
         finish();

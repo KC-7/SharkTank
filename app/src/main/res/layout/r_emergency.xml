@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/r_emergency"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="kkmp.sharktank.R_Emergency"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="match_parent"
+        app:srcCompat="@drawable/greenbar"
+        android:id="@+id/imageView2"
+        android:scaleType="fitXY"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Calling Contact in 5..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="34dp"
+        android:id="@+id/callingText"
+        android:textColor="@android:color/background_light"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/sym_action_call"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="79dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginTop="268dp"
+        android:id="@+id/imageButton" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/presence_busy"
+        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignLeft="@+id/callingText"
+        android:layout_alignStart="@+id/callingText"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/imageButton2" />
+
+</RelativeLayout>

@@ -69,7 +69,14 @@
             android:name=".R_RateCarepear"
             android:label="Rate Your Caregiver" />
         <activity android:name=".C_Notifications" />
-        <activity android:name=".R_Notifications"></activity>
+        <activity android:name=".R_Notifications" />
+        <activity android:name=".R_Emergency">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

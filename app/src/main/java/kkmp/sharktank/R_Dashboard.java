@@ -20,7 +20,7 @@ public class R_Dashboard extends AppCompatActivity {
 
         SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
         TextView hello = (TextView)findViewById(R.id.hello_text);
-        hello.setText("Hello, " + session.getString("username", "user"));
+        hello.setText("Hello, " + session.getString("firstname", "user"));
     }
 
     public void clickedButton_makeRequest(View view) {
@@ -42,6 +42,11 @@ public class R_Dashboard extends AppCompatActivity {
         final Intent intent = new Intent(this, Main.class);
         startActivity(intent);
         finish();
+    }
+
+    public void clickedButton_emergency(View view) {
+        final Intent intent = new Intent(this, R_Emergency.class);
+        startActivity(intent);
     }
 
 }
