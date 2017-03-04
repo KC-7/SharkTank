@@ -1,5 +1,7 @@
 package kkmp.sharktank;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Base64;
@@ -67,11 +69,18 @@ public class Core {
 
     }
 
-    static void loginAsRecipient(SharedPreferences session, String username) {
-        new getRecipientFileTask(session).execute(API + "account/recipient/" + username);
+    static void loginAsCaregiver(SharedPreferences session, String username) {
+        SharedPreferences.Editor editor = session.edit();
+        editor.putString("username", username);
+        editor.putString("type", "caregiver");
+        editor.apply();
+    }
+
+    static void loginAsRecipient(SharedPreferences session, String username, Context context) {
+        new getRecipientFileTask(session, context).execute(API + "account/recipient/" + username);
     }
     
-    static void loginAsRecipient(SharedPreferences session, JSONObject recipientAccountFile) {
+    static void loginAsRecipient(SharedPreferences session, JSONObject recipientAccountFile, Context context) {
         try {
             SharedPreferences.Editor editor = session.edit();
             editor.putString(FIRSTNAME, recipientAccountFile.getString(FIRSTNAME));
@@ -93,20 +102,18 @@ public class Core {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    static void loginAsCaregiver(SharedPreferences session, String username) {
-        SharedPreferences.Editor editor = session.edit();
-        editor.putString("username", username);
-        editor.putString("type", "caregiver");
-        editor.apply();
+        final Intent intent = new Intent(context, R_Dashboard.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     private static class getRecipientFileTask extends AsyncTask<String, Void, String> {
 
         private SharedPreferences session;
-        private getRecipientFileTask(SharedPreferences session) {
+        private Context context;
+        private getRecipientFileTask(SharedPreferences session, Context context) {
             this.session = session;
+            this.context = context.getApplicationContext();
         }
 
         @Override
@@ -141,7 +148,7 @@ public class Core {
                 final String file = new String(Base64.decode(encodedContent, Base64.DEFAULT));
                 final JSONObject fileJson = new JSONObject(file);
 
-                loginAsRecipient(session, fileJson);
+                loginAsRecipient(session, fileJson, context);
 
             } catch (JSONException e) {
                 e.printStackTrace();

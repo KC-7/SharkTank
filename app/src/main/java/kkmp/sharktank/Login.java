@@ -52,17 +52,16 @@ public class Login extends AppCompatActivity {
                     String type = list.getJSONObject(username_entry).getString("type");
 
                     final SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
-                    Intent intent;
                     switch (type) {
                         case "caregiver":
                             Core.loginAsCaregiver(session, username_entry);
-                            intent = new Intent(this, C_Dashboard.class);
+                            final Intent intent = new Intent(this, C_Dashboard.class);
                             startActivity(intent);
                             break;
                         case "recipient":
-                            Core.loginAsRecipient(session, username_entry);
-                            intent = new Intent(this, R_Dashboard.class);
-                            startActivity(intent);
+                            Core.loginAsRecipient(session, username_entry, this);
+                            break;
+                        default:
                             break;
                     }
 

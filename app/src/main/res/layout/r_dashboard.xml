@@ -84,9 +84,10 @@
         android:textColor="@android:color/background_light"
         android:onClick="clickedButton_logout"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+        android:layout_alignRight="@+id/hello_text"
+        android:layout_alignEnd="@+id/hello_text"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="21dp" />
 
 </RelativeLayout>
