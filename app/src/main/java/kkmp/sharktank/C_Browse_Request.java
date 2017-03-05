@@ -66,6 +66,7 @@ public class C_Browse_Request extends AppCompatActivity {
             requestMap.put("timings", requestFile.getString("timings"));
             requestMap.put("comments", requestFile.getString("comments"));
             requestMap.put("username", requestFile.getString("username"));
+            requestMap.put("code", requestFile.getString("code"));
 
             requests.add(requestMap);
 

@@ -9,10 +9,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -54,6 +56,107 @@ public class C_Select_Request extends AppCompatActivity {
     public void clickedButton_select(View view) {
         final Intent intent = new Intent(this, SuccessScreen.class);
         startActivity(intent);
+        
+        new getListShaAndContent(((HashMap<String, String>)getIntent().getSerializableExtra("requestMap")).get("code")).execute(API + "request/list");
+    }
+
+    private class removeRequestFromListTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+
+                final URL url = new URL(params[0]);
+                final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("PUT");
+                connection.setDoOutput(true);
+                connection.setRequestProperty("Content-Type:", "application/json");
+
+                String token = "c2341499852a34c450" + "fab7a962b8efda429c1522" + ":x-oauth-basic";
+                String authString = "Basic " + Base64.encodeToString(token.getBytes(), Base64.DEFAULT);
+                connection.setRequestProperty("Authorization", authString);
+
+                JSONObject requestParams = new JSONObject();
+                try {
+                    requestParams.put("message", "Unregistered request " + params[3]);
+                    requestParams.put("content", Base64.encodeToString(params[2].getBytes(), Base64.DEFAULT).replace("\n", ""));
+                    requestParams.put("sha", params[1]);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                OutputStreamWriter out = new OutputStreamWriter(connection.getOutputStream());
+                out.write(requestParams.toString());
+                out.close();
+
+                int responseCode = connection.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_CREATED) {
+                    Core.readStream(connection.getInputStream());
+                    return params[1];
+                } else {
+                    System.out.println(responseCode + " " + connection.getResponseMessage());
+                }
+
+            }  catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String listDetails) {
+
+        }
+    }
+    
+    private class getListShaAndContent extends AsyncTask<String, Void, String> {
+
+        private String CODE;
+        public getListShaAndContent(String code) {
+            CODE = code;
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+                final URL url = new URL(params[0]);
+                final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                String token = "c2341499852a34c450" + "fab7a962b8efda429c1522" + ":x-oauth-basic";
+                String authString = "Basic " + Base64.encodeToString(token.getBytes(), Base64.DEFAULT);
+                connection.setRequestProperty("Authorization", authString);
+                if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
+                    return Core.readStream(connection.getInputStream());
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String response) {
+            try {
+                final JSONObject listDetails = new JSONObject(response);
+                String sha = listDetails.getString("sha");
+                String encodedContent = listDetails.getString("content").replace("\n","");
+                String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
+
+                JSONArray listJson = new JSONArray(list);       // current list
+                JSONArray newListJson = new JSONArray();        // new list
+                for (int i = 0; i < listJson.length(); i++) {   // copy list to new list, except for the code
+                    if (!listJson.getString(i).equals(CODE)) {
+                        newListJson.put(listJson.getString(i));
+                    }
+                }
+
+                String updatedContent = newListJson.toString(2);       // gets new list's content
+
+                new removeRequestFromListTask().execute(API + "request/list", sha, updatedContent, CODE);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void processRecipientFile(JSONObject recipientFile) {

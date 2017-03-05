@@ -21,12 +21,17 @@ public class SuccessScreen extends AppCompatActivity {
     public void clickedButton_dashboard(View view) {
         Intent intent;
         SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
-        if (session.getString("type", "recipient").equals("recipient")) {
-            intent = new Intent(this, R_Dashboard.class);
-        } else {
-            intent = new Intent(this, C_Dashboard.class);
+        switch (session.getString("type", "recipient")) {
+            case "recipient":
+                intent = new Intent(this, R_Dashboard.class);
+                startActivity(intent);
+                break;
+            case "caregiver":
+                intent = new Intent(this, C_Dashboard.class);
+                startActivity(intent);
+                break;
         }
-        startActivity(intent);
+
     }
 
 }

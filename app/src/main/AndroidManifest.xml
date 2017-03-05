@@ -3,6 +3,7 @@
     package="kkmp.sharktank">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -17,23 +18,69 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" android:label="Login"/>
-        <activity android:name=".SuccessScreen" android:label="CarePeared"/>
-        <activity android:name=".C_Submit_Info" android:label="Submit Caregiver Info"/>
-        <activity android:name=".C_Submitted_Info" android:label="Submitted Caregiver Info"/>
-        <activity android:name=".C_Dashboard" android:label="Caregiver Dashboard"/>
-        <activity android:name=".C_Browse_Request" android:label="Browse Recipient Requests"/>
-        <activity android:name=".C_Select_Request" android:label="Select Recipient Request"/>
-        <activity android:name=".C_Make_Listing" android:label="Create Caregiver Listing"/>
-        <activity android:name=".C_View_Listing" android:label="View Your Listing"/>
-        <activity android:name=".R_Submit_Info" android:label="Submit Recipient Info"/>
-        <activity android:name=".R_Submit_Emergency_Info" android:label="Submit Recipient Emergency Contact Info"/>
-        <activity android:name=".R_Dashboard" android:label="Recipient Dashboard"/>
-        <activity android:name=".R_Make_Request" android:label="Create Recipient Request"/>
-        <activity android:name=".R_View_Request" android:label="View Your Request"/>
-        <activity android:name=".R_Browse_Listing" android:label="Browse Caregiver Listings"/>
-        <activity android:name=".R_Select_Listing" android:label="Select Caregiver Listing"/>
-        <activity android:name=".R_RateCarepear" android:label="Rate Your Caregiver"/>
+        <activity
+            android:name=".Login"
+            android:label="Login" />
+        <activity
+            android:name=".SuccessScreen"
+            android:label="CarePeared" />
+        <activity
+            android:name=".C_Submit_Info"
+            android:label="Submit Caregiver Info" />
+        <activity
+            android:name=".C_Submitted_Info"
+            android:label="Submitted Caregiver Info" />
+        <activity
+            android:name=".C_Dashboard"
+            android:label="Caregiver Dashboard" />
+        <activity
+            android:name=".C_Browse_Request"
+            android:label="Browse Recipient Requests" />
+        <activity
+            android:name=".C_Select_Request"
+            android:label="Select Recipient Request" />
+        <activity
+            android:name=".C_Make_Listing"
+            android:label="Create Caregiver Listing" />
+        <activity
+            android:name=".C_View_Listing"
+            android:label="View Your Listing" />
+        <activity
+            android:name=".R_Submit_Info"
+            android:label="Submit Recipient Info" />
+        <activity
+            android:name=".R_Submit_Emergency_Info"
+            android:label="Submit Recipient Emergency Contact Info" />
+        <activity
+            android:name=".R_Dashboard"
+            android:label="Recipient Dashboard" />
+        <activity
+            android:name=".R_Make_Request"
+            android:label="Create Recipient Request" />
+        <activity
+            android:name=".R_View_Request"
+            android:label="View Your Request" />
+        <activity
+            android:name=".R_Browse_Listing"
+            android:label="Browse Caregiver Listings" />
+        <activity
+            android:name=".R_Select_Listing"
+            android:label="Select Caregiver Listing" />
+        <activity
+            android:name=".R_RateCarepear"
+            android:label="Rate Your Caregiver" />
+        <activity android:name=".C_Notifications" />
+        <activity android:name=".R_Notifications" />
+        <activity
+            android:name=".R_Emergency"
+            android:icon="@drawable/accept_call"
+            android:label="Emergency Contact Call">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

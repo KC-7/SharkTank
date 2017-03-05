@@ -66,6 +66,7 @@ public class R_Browse_Listing extends AppCompatActivity {
             listingMap.put("timings", listingFile.getString("timings"));
             listingMap.put("comments", listingFile.getString("comments"));
             listingMap.put("username", listingFile.getString("username"));
+            listingMap.put("code", listingFile.getString("code"));
 
             listings.add(listingMap);
 
