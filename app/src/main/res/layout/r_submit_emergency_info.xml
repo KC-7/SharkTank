@@ -75,6 +75,8 @@
         android:layout_marginBottom="30dp"
         android:id="@+id/finish_button"
         android:textSize="22sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/r_view_request_button"
         android:onClick = "clickedButton_finish"
         android:layout_above="@+id/footer_text"
         android:layout_alignRight="@+id/title_text"

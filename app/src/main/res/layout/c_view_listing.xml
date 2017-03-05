@@ -80,8 +80,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/button10"
         android:textSize="18sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/c_dashboard_button"
+        android:onClick="clickedButton_back"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="clickedButton_back" />
+        android:layout_toRightOf="@+id/contact_info"
+        android:layout_toEndOf="@+id/contact_info"
+        android:layout_marginBottom="28dp" />
 </RelativeLayout>

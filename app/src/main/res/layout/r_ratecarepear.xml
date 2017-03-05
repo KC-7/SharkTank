@@ -21,10 +21,14 @@
         android:layout_marginBottom="41dp"
         android:id="@+id/button14"
         android:textSize="18sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/r_view_request_button"
+        android:onClick="clickedButton_submit"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText"
-        android:onClick="clickedButton_submit" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="49dp"
+        android:layout_marginEnd="49dp" />
 
     <RatingBar
         android:layout_width="wrap_content"

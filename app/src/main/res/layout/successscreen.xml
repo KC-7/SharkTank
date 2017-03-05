@@ -33,6 +33,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/button"
         android:textSize="22sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/r_select_listing_button"
         android:layout_marginBottom="48dp"
         android:onClick="clickedButton_dashboard"
         android:layout_alignParentBottom="true"

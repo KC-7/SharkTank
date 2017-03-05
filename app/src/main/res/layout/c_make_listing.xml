@@ -104,12 +104,14 @@
         android:text="Post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="28dp"
         android:id="@+id/post_button"
         android:textSize="20sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/c_dashboard_button"
+        android:onClick="clickedButton_post"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/other_box"
-        android:layout_toEndOf="@+id/other_box"
-        android:onClick="clickedButton_post" />
+        android:layout_alignRight="@+id/comments_field"
+        android:layout_alignEnd="@+id/comments_field" />
 
 </RelativeLayout>

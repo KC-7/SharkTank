@@ -34,6 +34,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/makeRequest_button"
         android:textSize="24sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/r_makeaservicerequestandbrowseservicelistings"
         android:onClick="clickedButton_makeRequest"
         android:layout_marginTop="42dp"
         android:layout_below="@+id/button5"
@@ -41,15 +43,19 @@
         android:layout_alignStart="@+id/browseListings_button" />
 
     <Button
-        android:text="Notifications"
+        android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        android:background="@color/colorAccent"
-        android:layout_marginTop="37dp"
+        android:layout_alignEnd="@+id/makeRequest_button"
+        android:layout_alignRight="@+id/makeRequest_button"
         android:layout_below="@+id/hello_text"
-        android:layout_alignLeft="@+id/button9"
-        android:layout_alignStart="@+id/button9" />
+        android:layout_marginTop="37dp"
+        android:background="@color/colorAccent"
+        android:elevation="24dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:text="Notifications"
+        android:textSize="18sp" />
 
     <Button
         android:text="Browse service listings"
@@ -57,6 +63,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/browseListings_button"
         android:textSize="24sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/r_makeaservicerequestandbrowseservicelistings"
         android:onClick="clickedButton_browseListings"
         android:layout_below="@+id/makeRequest_button"
         android:layout_centerHorizontal="true"
@@ -83,11 +91,11 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:textColor="@android:color/background_light"
         android:onClick="clickedButton_logout"
+        android:layout_marginBottom="21dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/hello_text"
-        android:layout_alignEnd="@+id/hello_text"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="21dp" />
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
 
 </RelativeLayout>

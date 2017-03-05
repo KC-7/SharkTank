@@ -98,6 +98,8 @@
         android:layout_below="@+id/birthday_field"
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp"
+        android:textColor="#FAFCFB"
+        android:background="@drawable/r_select_listing_button"
         android:onClick="clickedButton_finish" />
 
     <EditText
