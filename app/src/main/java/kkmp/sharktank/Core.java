@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Base64;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,11 +70,27 @@ public class Core {
 
     }
 
-    static void loginAsCaregiver(SharedPreferences session, String username) {
+    static void logout(SharedPreferences session, Context context) {
+        SharedPreferences.Editor editor = session.edit();
+        editor.putBoolean("loggedIn", false);
+        editor.apply();
+
+        Toast.makeText(context, "Logging out...", Toast.LENGTH_SHORT).show();
+    }
+
+    private static void launchDashboard(Context context, boolean recipient) {
+        final Intent intent = new Intent(context, (recipient ? R_Dashboard.class : C_Dashboard.class));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+    static void loginAsCaregiver(SharedPreferences session, String username, Context context) {
         SharedPreferences.Editor editor = session.edit();
         editor.putString("username", username);
         editor.putString("type", "caregiver");
+        editor.putBoolean("loggedIn", true);
         editor.apply();
+        launchDashboard(context, false);
     }
 
     static void loginAsRecipient(SharedPreferences session, String username, Context context) {
@@ -98,13 +115,12 @@ public class Core {
             editor.putString(E_EMAIL, recipientAccountFile.getString(E_EMAIL));
             editor.putString(E_PHONE, recipientAccountFile.getString(E_PHONE));
             editor.putString("type", "recipient");
+            editor.putBoolean("loggedIn", true);
             editor.apply();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        final Intent intent = new Intent(context, R_Dashboard.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
+        launchDashboard(context, true);
     }
 
     private static class getRecipientFileTask extends AsyncTask<String, Void, String> {

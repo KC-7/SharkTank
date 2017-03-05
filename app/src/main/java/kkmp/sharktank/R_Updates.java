@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class R_Notifications extends AppCompatActivity {
+public class R_Updates extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
     private TextView status, name_age_gender, contact_info, yourCaregiverIs, youCanContactAt;

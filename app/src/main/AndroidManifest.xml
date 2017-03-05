@@ -69,8 +69,12 @@
         <activity
             android:name=".R_RateCarepear"
             android:label="Rate Your Caregiver" />
-        <activity android:name=".C_Notifications" />
-        <activity android:name=".R_Notifications" />
+        <activity
+            android:name=".C_Updates"
+            android:label="Updates"/>
+        <activity
+            android:name=".R_Updates"
+            android:label="Updates"/>
         <activity
             android:name=".R_Emergency"
             android:icon="@drawable/accept_call"

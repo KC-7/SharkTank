@@ -43,6 +43,7 @@ public class R_Dashboard extends AppCompatActivity {
         final Intent intent = new Intent(this, Main.class);
         startActivity(intent);
         finish();
+        Core.logout(getSharedPreferences("session", Context.MODE_PRIVATE), this);
     }
 
     public void clickedButton_emergency(View view) {
@@ -51,7 +52,7 @@ public class R_Dashboard extends AppCompatActivity {
     }
 
     public void clickedButton_updates(View view) {
-        final Intent intent = new Intent(this, R_Notifications.class);
+        final Intent intent = new Intent(this, R_Updates.class);
         startActivity(intent);
     }
 

@@ -44,9 +44,8 @@ public class C_Select_Request extends AppCompatActivity {
     private final static String E_EMAIL = "emergency-email";
     private final static String E_PHONE = "emergency-phone";
 
-    private static String sha;
-    private static JSONObject recipientFile;
-
+    private String sha;
+    private JSONObject recipientFile;
     private String code;
 
     protected void onCreate(Bundle savedInstanceState) {

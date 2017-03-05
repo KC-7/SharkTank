@@ -34,7 +34,8 @@
         android:layout_marginBottom="44dp"
         android:layout_above="@+id/button8"
         android:layout_alignRight="@+id/button8"
-        android:layout_alignEnd="@+id/button8" />
+        android:layout_alignEnd="@+id/button8"
+        android:onClick="clickedButton_updates" />
 
     <Button
         android:text="Browse recipient requests"
