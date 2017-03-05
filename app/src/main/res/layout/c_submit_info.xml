@@ -89,19 +89,6 @@
         android:layout_alignLeft="@+id/phone_field"
         android:layout_alignStart="@+id/phone_field" />
 
-    <Button
-        android:hint="Finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/finish_button"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/birthday_field"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:textColor="#FAFCFB"
-        android:background="@drawable/r_select_listing_button"
-        android:onClick="clickedButton_finish" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -135,5 +122,20 @@
         android:textSize="23sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finish_button"
+        android:layout_marginTop="21dp"
+        android:textColor="#FAFCFB"
+        android:background="@drawable/r_select_listing_button"
+        android:onClick="clickedButton_finish"
+        android:layout_below="@+id/birthday_field"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="39dp"
+        android:layout_marginEnd="39dp" />
 
 </RelativeLayout>

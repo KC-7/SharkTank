@@ -59,23 +59,23 @@
 
 
     <TextView
-        android:hint="*Your family will be contacted during an emergency"
+        android:hint="This person will be contacted in the case of an emergency. Additionally, you can quickly call them yourself through the Dashboard's Emergency button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:id="@+id/footer_text"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/finish_button"
-        android:layout_alignStart="@+id/finish_button" />
+        android:layout_alignLeft="@+id/phone_E"
+        android:layout_alignStart="@+id/phone_E" />
 
     <Button
-        android:hint="Finish"
+        android:text="Finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:id="@+id/finish_button"
         android:textSize="22sp"
-        android:textColor="#FCFAFA"
+        android:textColor="@android:color/background_light"
         android:background="@drawable/r_view_request_button"
         android:onClick = "clickedButton_finish"
         android:layout_above="@+id/footer_text"

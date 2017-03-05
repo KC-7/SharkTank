@@ -86,7 +86,7 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
             accountFile.put(E_PHONE, e_phone_field.getText().toString().trim());
 
             String accountFileString = accountFile.toString(4);
-            new accountFileTask().execute(API + "account/recipient/" + bundle.getString(USERNAME).trim(), accountFileString);
+            new accountFileTask().execute(API + "account/recipient/" + bundle.getString(USERNAME), accountFileString);
 
         } catch (JSONException e) {
             e.printStackTrace();

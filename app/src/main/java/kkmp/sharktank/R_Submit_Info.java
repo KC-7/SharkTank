@@ -34,7 +34,7 @@ public class R_Submit_Info extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
-    public EditText firstname_field, lastname_field, username_field, password_field,gender_field, birthday_field;
+    private EditText firstname_field, lastname_field, username_field, password_field;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +44,6 @@ public class R_Submit_Info extends AppCompatActivity {
         lastname_field = (EditText)findViewById(R.id.lastname);
         username_field = (EditText)findViewById(R.id.username);
         password_field = (EditText)findViewById(R.id.password);
-        gender_field = (EditText)findViewById(R.id.gender);
-        birthday_field = (EditText)findViewById(R.id.birthday);
     }
 
     public void clickedButton_next(View view){
@@ -58,8 +56,6 @@ public class R_Submit_Info extends AppCompatActivity {
         bundle.putString(LASTNAME, lastname_field.getText().toString().trim());
         bundle.putString(USERNAME, username_field.getText().toString().trim());
         bundle.putString(PASSWORD, password_field.getText().toString().trim());
-        bundle.putString(GENDER, gender_field.getText().toString().trim());
-        bundle.putString(BIRTHDAY, birthday_field.getText().toString().trim());
 
         final Intent intent = new Intent(this, R_Submit_Info2.class);
         intent.putExtra("bundle", bundle);
@@ -97,14 +93,13 @@ public class R_Submit_Info extends AppCompatActivity {
                 final JSONObject listDetails = new JSONObject(response);
                 String encodedContent = listDetails.getString("content").replace("\n","");
                 String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
-                final JSONObject listJson = new JSONObject(list);
-                if (listJson.has(username_field.getText().toString().trim())) {
+                final JSONObject listOfAccounts = new JSONObject(list);
+                final String username = username_field.getText().toString().trim();
+                if (listOfAccounts.has(username)) {
                     toastL("Username already taken.");
                 } else {
                     toastS("Storing Data...");
-
                     goToR_Submit_info2();
-
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

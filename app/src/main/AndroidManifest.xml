@@ -49,6 +49,9 @@
             android:name=".R_Submit_Info"
             android:label="Submit Recipient Info" />
         <activity
+            android:name=".R_Submit_Info2"
+            android:label="Submit Recipient Info (2)" />
+        <activity
             android:name=".R_Submit_Emergency_Info"
             android:label="Submit Recipient Emergency Contact Info" />
         <activity
