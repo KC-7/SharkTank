@@ -62,7 +62,7 @@ public class Core {
         String responseString = response.toString();
         try {
             JSONObject responseJson = new JSONObject(responseString);
-            return responseJson.toString(2);
+            return responseJson.toString(4);
         } catch (JSONException e) {
             return responseString;
         }

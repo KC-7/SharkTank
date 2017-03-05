@@ -26,11 +26,11 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Notifications"
+        android:text="Updates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button11"
-        android:background="@color/colorAccent"
+        android:background="@android:color/holo_orange_light"
         android:layout_marginBottom="44dp"
         android:layout_above="@+id/button8"
         android:layout_alignRight="@+id/button8"

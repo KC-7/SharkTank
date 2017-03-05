@@ -50,4 +50,9 @@ public class R_Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clickedButton_updates(View view) {
+        final Intent intent = new Intent(this, R_Notifications.class);
+        startActivity(intent);
+    }
+
 }

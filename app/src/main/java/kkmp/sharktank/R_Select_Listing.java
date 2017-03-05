@@ -148,7 +148,7 @@ public class R_Select_Listing extends AppCompatActivity {
                     }
                 }
 
-                String updatedContent = newListJson.toString(2);       // gets new list's content
+                String updatedContent = newListJson.toString(4);       // gets new list's content
 
                 new removeListingFromListTask().execute(API + "listing/list", sha, updatedContent, CODE);
 

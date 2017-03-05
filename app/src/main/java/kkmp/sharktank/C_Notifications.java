@@ -8,6 +8,6 @@ public class C_Notifications extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.c_notifications);
+        setContentView(R.layout.c_updates);
     }
 }

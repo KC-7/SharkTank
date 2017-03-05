@@ -149,7 +149,7 @@ public class C_Submit_Info extends AppCompatActivity {
                 passAndType.put(PASSWORD, accountFile.getString(PASSWORD));
                 passAndType.put("type", "caregiver");
                 listJson.put(accountFile.getString(USERNAME), passAndType);
-                String updatedContent = listJson.toString(2);
+                String updatedContent = listJson.toString(4);
 
                 toastS("Registering...");
                 new addAccountToListTask().execute(API + "account/list", sha, updatedContent, accountFile.getString(USERNAME));
@@ -221,7 +221,7 @@ public class C_Submit_Info extends AppCompatActivity {
             accountFile.put(SSN, ssn_field.getText().toString().trim());
             accountFile.put(BIRTHDAY, birthday_field.getText().toString().trim());
 
-            String accountFileString = accountFile.toString(2);
+            String accountFileString = accountFile.toString(4);
             new accountFileTask().execute(API + "account/caregiver/" + username_field.getText().toString().trim(), accountFileString);
 
         } catch (JSONException e) {

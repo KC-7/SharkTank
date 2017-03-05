@@ -80,7 +80,7 @@ public class C_Make_Listing extends AppCompatActivity {
             listingFile.put(CODE, code);
             listingFile.put("username", getSharedPreferences("session", Context.MODE_PRIVATE).getString("username", "user"));
 
-            final String listingFileString = listingFile.toString(2);
+            final String listingFileString = listingFile.toString(4);
             new listingFileTask().execute(API + "listing/listings/" + code, listingFileString);
 
         } catch (JSONException e) {
@@ -204,7 +204,7 @@ public class C_Make_Listing extends AppCompatActivity {
                 JSONArray listJson = new JSONArray(list);       // current list
                 JSONObject listingFile = new JSONObject(listingFileString);     // listing
                 listJson.put(listingFile.getString(CODE));          // puts listing code into list
-                String updatedContent = listJson.toString(2);       // gets new list's content
+                String updatedContent = listJson.toString(4);       // gets new list's content
 
                 toastS("Registering listing...");
                 new addListingToListTask().execute(API + "listing/list", sha, updatedContent, listingFile.getString(CODE));

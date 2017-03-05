@@ -85,7 +85,7 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
             accountFile.put(E_EMAIL, e_email_field.getText().toString().trim());
             accountFile.put(E_PHONE, e_phone_field.getText().toString().trim());
 
-            String accountFileString = accountFile.toString(2);
+            String accountFileString = accountFile.toString(4);
             new accountFileTask().execute(API + "account/recipient/" + bundle.getString(USERNAME).trim(), accountFileString);
 
         } catch (JSONException e) {
@@ -186,7 +186,7 @@ public class R_Submit_Emergency_Info extends AppCompatActivity {
                 passAndType.put(PASSWORD, accountFile.getString(PASSWORD));
                 passAndType.put("type", "recipient");
                 listJson.put(accountFile.getString(USERNAME), passAndType);
-                String updatedContent = listJson.toString(2);
+                String updatedContent = listJson.toString(4);
 
                 toastS("Registering...");
                 new addAccountToListTask().execute(API + "account/list", sha, updatedContent, accountFile.getString(USERNAME));
