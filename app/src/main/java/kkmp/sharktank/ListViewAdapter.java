@@ -35,13 +35,23 @@ class ListViewAdapter extends ArrayAdapter<HashMap<String, String>> {
         TextView timings = (TextView)listing_item_view.findViewById(R.id.listing_timings);
 
         HashMap<String, String> data = getItem(position);
-        String titleString = data.get("title");
+        String titleString = data.get("title").trim();
         String tagsString = "Tags: " + data.get("tags").trim().replace(" ",", ");
-        String timingsString = data.get("timings");
+        String timingsString = data.get("timings").trim();
 
         title.setText(titleString);
         tags.setText(tagsString);
         timings.setText(timingsString);
+
+        if (timingsString.isEmpty()) {
+            timings.setVisibility(View.GONE);
+        }
+        if (titleString.isEmpty()) {
+            title.setVisibility(View.GONE);
+        }
+        if (tagsString.isEmpty()) {
+            tags.setVisibility(View.GONE);
+        }
 
         return listing_item_view;
     }

@@ -80,7 +80,7 @@ public class R_Make_Request extends AppCompatActivity {
             requestFile.put(CODE, code);
             requestFile.put("username", getSharedPreferences("session", Context.MODE_PRIVATE).getString("username", "user"));
 
-            final String requestFileString = requestFile.toString(2);
+            final String requestFileString = requestFile.toString(4);
             new requestFileTask().execute(API + "request/requests/" + code, requestFileString);
 
         } catch (JSONException e) {
@@ -204,7 +204,7 @@ public class R_Make_Request extends AppCompatActivity {
                 JSONArray listJson = new JSONArray(list);       // current list
                 JSONObject requestFile = new JSONObject(requestFileString);     // request
                 listJson.put(requestFile.getString(CODE));          // puts request code into list
-                String updatedContent = listJson.toString(2);       // gets new list's content
+                String updatedContent = listJson.toString(4);       // gets new list's content
 
                 toastS("Registering request...");
                 new addRequestToListTask().execute(API + "request/list", sha, updatedContent, requestFile.getString(CODE));

@@ -9,48 +9,41 @@
         android:id="@+id/hello"
         android:textSize="25sp"
         android:textIsSelectable="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/button12"
-        android:layout_alignStart="@+id/button12"
-        android:layout_marginTop="24dp" />
+        android:layout_above="@+id/button11"
+        android:layout_alignLeft="@+id/button8"
+        android:layout_alignStart="@+id/button8"
+        android:layout_marginBottom="27dp" />
 
     <Button
-        android:id="@+id/button12"
+        android:text="Make a service listing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:background="@drawable/c_dashboard_button"
+        android:id="@+id/button8"
         android:onClick="clickedButton_makeListing"
-        android:text="Make a service listing"
-        android:textColor="#FCFAFA"
         android:textSize="23sp"
+        android:layout_marginBottom="42dp"
         android:layout_above="@+id/button7"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/button11"
+        android:text="Notifications"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button12"
-        android:layout_alignEnd="@+id/button12"
-        android:layout_alignRight="@+id/button12"
-        android:layout_marginBottom="32dp"
+        android:id="@+id/button11"
         android:background="@color/colorAccent"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="Notifications"
-        android:textSize="18sp" />
+        android:layout_marginBottom="44dp"
+        android:layout_above="@+id/button8"
+        android:layout_alignRight="@+id/button8"
+        android:layout_alignEnd="@+id/button8" />
 
     <Button
-        android:id="@+id/button7"
+        android:text="Browse recipient requests"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:background="@drawable/c_dashboard_button"
+        android:id="@+id/button7"
         android:onClick="clickedButton_browseRequest"
-        android:text="Browse recipient requests"
-        android:textColor="#FCFAFA"
-        android:textSize="22sp"
+        android:textSize="23sp"
+        android:layout_marginBottom="96dp"
         android:layout_above="@+id/logout_button"
         android:layout_centerHorizontal="true" />
 
@@ -64,7 +57,9 @@
         android:textColor="@android:color/background_light"
         android:onClick="clickedButton_logout"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/button12"
-        android:layout_alignStart="@+id/button12" />
+        android:layout_alignLeft="@+id/button7"
+        android:layout_alignStart="@+id/button7"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
 
 </RelativeLayout>

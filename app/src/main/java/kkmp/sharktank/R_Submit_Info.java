@@ -34,8 +34,7 @@ public class R_Submit_Info extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
 
-    public EditText firstname_field, lastname_field, username_field, password_field, email_field,
-            phone_field, address_field, gender_field, birthday_field;
+    public EditText firstname_field, lastname_field, username_field, password_field,gender_field, birthday_field;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +44,6 @@ public class R_Submit_Info extends AppCompatActivity {
         lastname_field = (EditText)findViewById(R.id.lastname);
         username_field = (EditText)findViewById(R.id.username);
         password_field = (EditText)findViewById(R.id.password);
-        email_field = (EditText)findViewById(R.id.email);
-        phone_field = (EditText)findViewById(R.id.phone);
-        address_field = (EditText)findViewById(R.id.address);
         gender_field = (EditText)findViewById(R.id.gender);
         birthday_field = (EditText)findViewById(R.id.birthday);
     }
@@ -56,19 +52,16 @@ public class R_Submit_Info extends AppCompatActivity {
         new R_Submit_Info.usernameTask().execute(API + "account/list");
     }
 
-    private void goToEmergencySubmit() {
+    private void goToR_Submit_info2() {
         final Bundle bundle = new Bundle();
         bundle.putString(FIRSTNAME, firstname_field.getText().toString().trim());
         bundle.putString(LASTNAME, lastname_field.getText().toString().trim());
         bundle.putString(USERNAME, username_field.getText().toString().trim());
         bundle.putString(PASSWORD, password_field.getText().toString().trim());
-        bundle.putString(EMAIL, email_field.getText().toString().trim());
-        bundle.putString(PHONE, phone_field.getText().toString().trim());
-        bundle.putString(ADDRESS, address_field.getText().toString().trim());
         bundle.putString(GENDER, gender_field.getText().toString().trim());
         bundle.putString(BIRTHDAY, birthday_field.getText().toString().trim());
 
-        final Intent intent = new Intent(this, R_Submit_Emergency_Info.class);
+        final Intent intent = new Intent(this, R_Submit_Info2.class);
         intent.putExtra("bundle", bundle);
         startActivity(intent);
         finish();
@@ -110,7 +103,7 @@ public class R_Submit_Info extends AppCompatActivity {
                 } else {
                     toastS("Storing Data...");
 
-                    goToEmergencySubmit();
+                    goToR_Submit_info2();
 
                 }
             } catch (JSONException e) {

@@ -1,7 +1,6 @@
 package kkmp.sharktank;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -31,40 +30,53 @@ public class Login extends AppCompatActivity {
 
         username_field = (EditText) findViewById(R.id.username_field);
         password_field = (EditText) findViewById(R.id.password_field);
+
+        SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
+        if (session.getBoolean("loggedIn", false)) {
+            final String username = session.getString("username", "user");
+            final String type = session.getString("type", "recipient");
+            final String password = session.getString("password", "pass");
+            try {
+                final JSONObject acct = new JSONObject();
+                acct.put("username", username);
+                acct.put("type", type);
+                acct.put("password", password);
+
+                handleAccountEntry(acct, true);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void clickedButton_loginToAcct(View view) {
         new accountTask().execute(API + "account/list");
     }
 
-    private void handleAccountEntry(JSONObject list) {
+    private void handleAccountEntry(JSONObject list, boolean overrideCheck) {
+        System.out.println(overrideCheck);
         String username_entry = username_field.getText().toString().trim();
 
         // If the list of accounts contains the username_entry
-        if (list.has(username_entry)) {
+        if (overrideCheck || list.has(username_entry)) {
 
             String password_entry = password_field.getText().toString().trim();
 
             try {
-                String pass = list.getJSONObject(username_entry).getString("password");
-                if (pass.equals(password_entry)) {
+                if (overrideCheck || list.getJSONObject(username_entry).getString("password").equals(password_entry)) {
                     toastS("Logging in...");
-                    String type = list.getJSONObject(username_entry).getString("type");
-
                     final SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
+                    String type = overrideCheck ? session.getString("type", null) : list.getJSONObject(username_entry).getString("type");
                     switch (type) {
                         case "caregiver":
-                            Core.loginAsCaregiver(session, username_entry);
-                            final Intent intent = new Intent(this, C_Dashboard.class);
-                            startActivity(intent);
+                            Core.loginAsCaregiver(session, overrideCheck ? session.getString("username", null) : username_entry, this);
                             break;
                         case "recipient":
-                            Core.loginAsRecipient(session, username_entry, this);
+                            Core.loginAsRecipient(session, overrideCheck ? session.getString("username", null) : username_entry, this);
                             break;
                         default:
                             break;
                     }
-
                 } else {
                     toastL("Wrong password.");
                 }
@@ -114,7 +126,7 @@ public class Login extends AppCompatActivity {
                 String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
                 JSONObject listJson = new JSONObject(list);
 
-                handleAccountEntry(listJson);
+                handleAccountEntry(listJson, false);
             } catch (JSONException e) {
                 toastL("ERROR: Retrieval parsing error.");
                 e.printStackTrace();

@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="7dp"
         android:id="@+id/listing_title"
         android:textSize="27sp"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
         android:text="Listing Tags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="7dp"
         android:id="@+id/listing_tags"
         android:textStyle="normal|bold"
         android:textSize="20sp"
@@ -32,11 +32,11 @@
         android:text="Listing Timings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/listing_timings"
         android:textSize="20sp"
         android:layout_below="@+id/listing_tags"
         android:layout_alignLeft="@+id/listing_tags"
         android:layout_alignStart="@+id/listing_tags"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="12dp" />
 </RelativeLayout>

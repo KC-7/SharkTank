@@ -37,10 +37,12 @@ public class C_Dashboard extends AppCompatActivity {
         final Intent intent = new Intent(this, Main.class);
         startActivity(intent);
         finish();
+        Core.logout(getSharedPreferences("session", Context.MODE_PRIVATE), this);
     }
 
-    public void clickedButton_emergency(View view) {
-
+    public void clickedButton_updates(View view) {
+        final Intent intent = new Intent(this, C_Updates.class);
+        startActivity(intent);
     }
 
 }
