@@ -21,6 +21,8 @@
         android:id="@+id/button8"
         android:onClick="clickedButton_makeListing"
         android:textSize="23sp"
+        android:textColor="#FCFAFA"
+        android:background="@drawable/c_dashboard_button"
         android:layout_marginBottom="42dp"
         android:layout_above="@+id/button7"
         android:layout_centerHorizontal="true" />
@@ -38,15 +40,17 @@
         android:onClick="clickedButton_updates" />
 
     <Button
-        android:text="Browse recipient requests"
+        android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button7"
-        android:onClick="clickedButton_browseRequest"
-        android:textSize="23sp"
-        android:layout_marginBottom="96dp"
         android:layout_above="@+id/logout_button"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/c_dashboard_button"
+        android:onClick="clickedButton_browseRequest"
+        android:text="Browse recipient requests"
+        android:textColor="#FCFAFA"
+        android:textSize="22sp" />
 
     <Button
         android:text="LOG OUT"
