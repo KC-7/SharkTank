@@ -163,6 +163,7 @@ public class C_Select_Request extends AppCompatActivity {
                 JSONObject listJson = new JSONObject(list);
                 JSONObject recipientSection = (JSONObject) listJson.get(recipientFile.getString(USERNAME));
                 recipientSection.put("carepear", myCaregiverUsername);
+                recipientSection.put("code", code);
                 listJson.put(recipientFile.getString(USERNAME), recipientSection);
 
                 String updatedContent = listJson.toString(4);

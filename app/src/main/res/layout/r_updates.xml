@@ -24,31 +24,6 @@
         android:layout_alignEnd="@+id/youCanContactAt" />
 
     <TextView
-        android:text="First Last, Age #, Gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/name_age_gender"
-        android:textSize="20sp"
-        android:textStyle="normal|italic"
-        android:layout_marginTop="95dp"
-        android:layout_below="@+id/status"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:visibility="visible" />
-
-    <TextView
-        android:text="Your caregiver is:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/status"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp"
-        android:id="@+id/yourCaregiverIs"
-        android:textSize="30sp"
-        android:textColor="@android:color/background_dark" />
-
-    <TextView
         android:text="Contact Info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,5 +46,42 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="17dp" />
+
+    <Button
+        android:text="View Your Request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewRequest"
+        android:background="@drawable/r_view_request_button"
+        android:textColor="@android:color/background_light"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="clickedButton_viewRequest" />
+
+    <TextView
+        android:text="Your caregiver is:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/yourCaregiverIs"
+        android:textSize="30sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/status"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="First Last, Age #, Gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_age_gender"
+        android:textSize="20sp"
+        android:textStyle="normal|italic"
+        android:layout_marginTop="21dp"
+        android:visibility="visible"
+        android:layout_below="@+id/yourCaregiverIs"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

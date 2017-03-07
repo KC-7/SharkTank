@@ -163,6 +163,7 @@ public class R_Select_Listing extends AppCompatActivity {
                 JSONObject listJson = new JSONObject(list);
                 JSONObject caregiverSection = (JSONObject) listJson.get(caregiverFile.getString(USERNAME));
                 caregiverSection.put("carepear", myRecipientUsername);
+                caregiverSection.put("code", code);
                 listJson.put(caregiverFile.getString(USERNAME), caregiverSection);
 
                 String updatedContent = listJson.toString(4);

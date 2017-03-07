@@ -1,6 +1,7 @@
 package kkmp.sharktank;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,11 +16,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 public class R_Updates extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
     private TextView status, name_age_gender, contact_info, yourCaregiverIs, youCanContactAt;
+    private String code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,68 @@ public class R_Updates extends AppCompatActivity {
         new getAccountRegistry().execute(API + "account/list");
     }
 
-    private void processCaregiverFile(JSONObject caregiverFile) {
+    public void clickedButton_viewRequest(View view) {
+        new getRequestFileTask().execute(API + "request/requests/" + code);
+    }
+
+    private void processRequestFile(JSONObject requestFile) {
+        try {
+            HashMap<String, String> requestMap = new HashMap<>();
+            requestMap.put("title", requestFile.getString("title"));
+            requestMap.put("tags", requestFile.getString("tags"));
+            requestMap.put("timings", requestFile.getString("timings"));
+            requestMap.put("comments", requestFile.getString("comments"));
+            requestMap.put("username", requestFile.getString("username"));
+            requestMap.put("code", requestFile.getString("code"));
+
+            final Intent intent = new Intent();
+            intent.setClassName("kkmp.sharktank", "kkmp.sharktank.R_View_Request");
+            intent.putExtra("requestMap", requestMap);
+            startActivity(intent);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private class getRequestFileTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urlString) {
+            try {
+                final URL url = new URL(urlString[0]);
+                final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+
+                String token = "c2341499852a34c450" + "fab7a962b8efda429c1522" + ":x-oauth-basic";
+                String authString = "Basic " + Base64.encodeToString(token.getBytes(), Base64.DEFAULT);
+                connection.setRequestProperty("Authorization", authString);
+
+                if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    return Core.readStream(connection.getInputStream());
+                } else {
+                    throw new AssertionError();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String response) {
+            try {
+                final JSONObject listDetails = new JSONObject(response);
+                String encodedContent = listDetails.getString("content").replace("\n", "");
+                String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
+                JSONObject requestFile = new JSONObject(list);
+                processRequestFile(requestFile);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void displayCaregiverFile(JSONObject caregiverFile) {
 
         try {
             String fnString = caregiverFile.getString("firstname");
@@ -106,7 +170,7 @@ public class R_Updates extends AppCompatActivity {
                 String file = new String(Base64.decode(encodedContent, Base64.DEFAULT));
                 JSONObject fileJson = new JSONObject(file);
 
-                processCaregiverFile(fileJson);
+                displayCaregiverFile(fileJson);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -155,6 +219,7 @@ public class R_Updates extends AppCompatActivity {
                 if (myAccountRegistry.has("carepear")) {
                     String carepearC = myAccountRegistry.getString("carepear");
                     status.setText("Your request has been accepted!");
+                    code = myAccountRegistry.getString("code");
                     new getCaregiverFileTask().execute(API + "account/caregiver/" + carepearC);
                 } else {
                     status.setText("None of your requests have been accepted yet.");
