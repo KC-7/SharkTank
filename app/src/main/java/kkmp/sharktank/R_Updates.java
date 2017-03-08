@@ -60,6 +60,7 @@ public class R_Updates extends AppCompatActivity {
             final Intent intent = new Intent();
             intent.setClassName("kkmp.sharktank", "kkmp.sharktank.R_View_Request");
             intent.putExtra("requestMap", requestMap);
+            intent.putExtra("backLaunchesDashboard", false);
             startActivity(intent);
         } catch (JSONException e) {
             e.printStackTrace();

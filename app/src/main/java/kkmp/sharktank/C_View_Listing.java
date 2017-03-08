@@ -24,6 +24,7 @@ import java.util.HashMap;
 public class C_View_Listing extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
+    private boolean backLaunchesDashboard = true;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,9 @@ public class C_View_Listing extends AppCompatActivity {
 
         final Intent intent = getIntent();
         final HashMap<String, String> listingMap = (HashMap<String, String>)intent.getSerializableExtra("listingMap");
+        if (intent.hasExtra("backLaunchesDashboard")) {
+            backLaunchesDashboard = intent.getBooleanExtra("backLaunchesDashboard", true);
+        }
 
         TextView title = (TextView)findViewById(R.id.listing_title);
         TextView tags = (TextView)findViewById(R.id.listing_tags);
@@ -52,8 +56,10 @@ public class C_View_Listing extends AppCompatActivity {
     }
 
     public void clickedButton_back(View view) {
-        final Intent intent = new Intent(this, C_Dashboard.class);
-        startActivity(intent);
+        if (backLaunchesDashboard) {
+            final Intent intent = new Intent(this, C_Dashboard.class);
+            startActivity(intent);
+        }
         finish();
     }
 

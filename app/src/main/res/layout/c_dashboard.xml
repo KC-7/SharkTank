@@ -1,43 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kkmp.sharktank.C_Dashboard">
 
     <TextView
-        android:text="Hello, **"
+        android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/hello"
-        android:textSize="25sp"
-        android:textIsSelectable="false"
         android:layout_above="@+id/button11"
         android:layout_alignLeft="@+id/button8"
         android:layout_alignStart="@+id/button8"
-        android:layout_marginBottom="27dp" />
+        android:layout_marginBottom="27dp"
+        android:text="Hello, **"
+        android:textIsSelectable="false"
+        android:textSize="25sp" />
 
     <Button
-        android:text="Make a service listing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/button8"
-        android:onClick="clickedButton_makeListing"
-        android:textSize="23sp"
-        android:textColor="#FCFAFA"
-        android:background="@drawable/c_dashboard_button"
-        android:layout_marginBottom="42dp"
-        android:layout_above="@+id/button7"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Updates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button11"
-        android:background="@color/colorAccent"
-        android:layout_marginBottom="44dp"
-        android:layout_above="@+id/button8"
-        android:layout_alignRight="@+id/button8"
-        android:layout_alignEnd="@+id/button8"
-        android:onClick="clickedButton_updates" />
+        android:layout_above="@+id/button7"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/c_dashboard_button"
+        android:onClick="clickedButton_makeListing"
+        android:text="Make a service listing"
+        android:textColor="#FCFAFA"
+        android:textSize="24sp"
+        android:layout_alignRight="@+id/button11"
+        android:layout_alignEnd="@+id/button11"
+        android:layout_alignLeft="@+id/button7"
+        android:layout_alignStart="@+id/button7" />
 
     <Button
         android:id="@+id/button7"
@@ -48,23 +42,38 @@
         android:layout_marginBottom="96dp"
         android:background="@drawable/c_dashboard_button"
         android:onClick="clickedButton_browseRequest"
-        android:text="Browse recipient requests"
+        android:text="View recipient requests"
         android:textColor="#FCFAFA"
-        android:textSize="22sp" />
+        android:textSize="24sp" />
 
     <Button
-        android:text="LOG OUT"
+        android:id="@+id/logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:id="@+id/logout_button"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:textColor="@android:color/background_light"
-        android:onClick="clickedButton_logout"
-        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/button7"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/button7"
+        android:layout_marginBottom="33dp"
         android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+        android:layout_marginStart="11dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:onClick="clickedButton_logout"
+        android:text="LOG OUT"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:onClick="clickedButton_updates"
+        android:textSize="18sp"
+        android:text="Updates"
+        android:elevation="24dp"
+        android:layout_above="@+id/button8"
+        android:layout_alignRight="@+id/button7"
+        android:layout_alignEnd="@+id/button7"
+        android:layout_marginBottom="35dp"
+        android:minWidth="108dip" />
 
 </RelativeLayout>

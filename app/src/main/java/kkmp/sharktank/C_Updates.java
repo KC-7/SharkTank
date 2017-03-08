@@ -1,6 +1,7 @@
 package kkmp.sharktank;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,11 +16,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 public class C_Updates extends AppCompatActivity {
 
     private final static String API = "https://api.github.com/repos/KC-7/CarePear-Data/contents/";
     private TextView status, name_age_gender, contact_info, yourRecipientIs, youCanContactAt;
+    private String code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,69 @@ public class C_Updates extends AppCompatActivity {
         new getAccountRegistry().execute(API + "account/list");
     }
 
-    private void processRecipientFile(JSONObject recipientFile) {
+    public void clickedButton_viewListing(View view) {
+        new getListingFileTask().execute(API + "listing/listings/" + code);
+    }
 
+    private void processListingFile(JSONObject listingFile) {
+        try {
+            HashMap<String, String> listingMap = new HashMap<>();
+            listingMap.put("title", listingFile.getString("title"));
+            listingMap.put("tags", listingFile.getString("tags"));
+            listingMap.put("timings", listingFile.getString("timings"));
+            listingMap.put("comments", listingFile.getString("comments"));
+            listingMap.put("username", listingFile.getString("username"));
+            listingMap.put("code", listingFile.getString("code"));
+
+            final Intent intent = new Intent();
+            intent.setClassName("kkmp.sharktank", "kkmp.sharktank.C_View_Listing");
+            intent.putExtra("listingMap", listingMap);
+            intent.putExtra("backLaunchesDashboard", false);
+            startActivity(intent);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private class getListingFileTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urlString) {
+            try {
+                final URL url = new URL(urlString[0]);
+                final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+
+                String token = "c2341499852a34c450" + "fab7a962b8efda429c1522" + ":x-oauth-basic";
+                String authString = "Basic " + Base64.encodeToString(token.getBytes(), Base64.DEFAULT);
+                connection.setRequestProperty("Authorization", authString);
+
+                if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    return Core.readStream(connection.getInputStream());
+                } else {
+                    throw new AssertionError();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String response) {
+            try {
+                final JSONObject listDetails = new JSONObject(response);
+                String encodedContent = listDetails.getString("content").replace("\n", "");
+                String list = new String(Base64.decode(encodedContent, Base64.DEFAULT));
+                JSONObject listingFile = new JSONObject(list);
+                processListingFile(listingFile);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void displayRecipientFile(JSONObject recipientFile) {
         try {
             String fnString = recipientFile.getString("firstname");
             String lnString = recipientFile.getString("lastname");
@@ -106,7 +170,7 @@ public class C_Updates extends AppCompatActivity {
                 String file = new String(Base64.decode(encodedContent, Base64.DEFAULT));
                 JSONObject fileJson = new JSONObject(file);
 
-                processRecipientFile(fileJson);
+                displayRecipientFile(fileJson);
 
             } catch (JSONException e) {
                 e.printStackTrace();

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="kkmp.sharktank.R_Submit_Info2_">
 
     <TextView
         android:text="Personal Information"
@@ -12,7 +15,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/background_dark" />
-
 
 
     <EditText
