@@ -146,8 +146,6 @@ public class Core {
 
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     return Core.readStream(connection.getInputStream());
-                } else {
-                    toastL("ERROR: Connection code " + connection.getResponseCode());
                 }
 
             } catch (IOException e) {

@@ -10,6 +10,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -229,5 +230,13 @@ public class C_Updates extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void toastL(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    private void toastS(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
