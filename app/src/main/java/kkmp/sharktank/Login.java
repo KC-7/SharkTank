@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
                 if (overrideCheck || list.getJSONObject(username_entry).getString("password").equals(password_entry)) {
                     toastS("Logging in...");
                     final SharedPreferences session = getSharedPreferences("session", Context.MODE_PRIVATE);
-                    String type = overrideCheck ? session.getString("type", null) : list.getJSONObject(username_entry).getString("type");
+                    String type = overrideCheck ? session.getString("type", "") : list.getJSONObject(username_entry).getString("type");
                     switch (type) {
                         case "caregiver":
                             Core.loginAsCaregiver(session, overrideCheck ? session.getString("username", null) : username_entry, this);
@@ -107,7 +107,7 @@ public class Login extends AppCompatActivity {
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError(connection.getResponseCode());
+                    toastL("ERROR: Connection code " + connection.getResponseCode());
                 }
 
             } catch (IOException e) {

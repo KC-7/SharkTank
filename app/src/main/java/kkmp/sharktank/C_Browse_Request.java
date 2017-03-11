@@ -92,7 +92,7 @@ public class C_Browse_Request extends AppCompatActivity {
                 if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError();
+                    toastL("ERROR: Connection code " + connection.getResponseCode());
                 }
 
             } catch (IOException e) {
@@ -145,7 +145,7 @@ public class C_Browse_Request extends AppCompatActivity {
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError();
+                    toastL("ERROR: Connection code " + connection.getResponseCode());
                 }
 
             } catch (IOException e) {

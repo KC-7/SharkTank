@@ -78,7 +78,7 @@
         android:layout_alignStart="@+id/listing_timings" />
 
     <Button
-        android:text="Back to Dashboard"
+        android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button10"
@@ -86,8 +86,10 @@
         android:textColor="#FCFAFA"
         android:background="@drawable/c_dashboard_button"
         android:onClick="clickedButton_back"
+        android:layout_marginBottom="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/contact_info"
-        android:layout_toEndOf="@+id/contact_info"
-        android:layout_marginBottom="28dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
 </RelativeLayout>

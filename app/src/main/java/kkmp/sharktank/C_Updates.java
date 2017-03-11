@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -82,7 +83,7 @@ public class C_Updates extends AppCompatActivity {
                 if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError();
+                    Log.e("error", connection.getResponseCode() + "");
                 }
 
             } catch (IOException e) {
@@ -153,7 +154,7 @@ public class C_Updates extends AppCompatActivity {
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError(connection.getResponseCode());
+                    toastL("ERROR: Connection code " + connection.getResponseCode());
                 }
 
             } catch (IOException e) {
@@ -195,7 +196,7 @@ public class C_Updates extends AppCompatActivity {
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError(connection.getResponseCode());
+                    toastL("ERROR: Connection code " + connection.getResponseCode());
                 }
 
             } catch (IOException e) {
@@ -219,6 +220,7 @@ public class C_Updates extends AppCompatActivity {
                 if (myAccountRegistry.has("carepear")) {
                     String carepearR = myAccountRegistry.getString("carepear");
                     status.setText("Your listing has been accepted!");
+                    code = myAccountRegistry.getString("code");
                     new getRecipientFileTask().execute(API + "account/recipient/" + carepearR);
                 } else {
                     status.setText("None of your listings have been accepted yet.");

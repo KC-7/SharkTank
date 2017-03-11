@@ -111,7 +111,7 @@ public class C_View_Listing extends AppCompatActivity {
                 if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     return Core.readStream(connection.getInputStream());
                 } else {
-                    throw new AssertionError(connection.getResponseCode());
+                    toastL("ERROR: Connection code " + connection.getResponseCode());
                 }
 
             } catch (IOException e) {
