@@ -3,6 +3,7 @@ package kkmp.sharktank;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -44,6 +45,16 @@ public class R_Dashboard extends AppCompatActivity {
         startActivity(intent);
         finish();
         Core.logout(getSharedPreferences("session", Context.MODE_PRIVATE), this);
+    }
+
+    public void clickedButton_911(View view) {
+        try {
+            final Intent intent = new Intent(Intent.ACTION_CALL, Uri.fromParts("tel", "911", null));
+            startActivity(intent);
+        } catch (SecurityException e) {
+            final Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "911", null));
+            startActivity(intent);
+        }
     }
 
     public void clickedButton_emergency(View view) {

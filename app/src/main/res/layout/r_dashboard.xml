@@ -6,53 +6,6 @@
     tools:context="kkmp.sharktank.R_Dashboard">
 
     <Button
-        android:text="EMERGENCY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button9"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:textSize="16sp"
-        android:textAllCaps="false"
-        android:onClick="clickedButton_emergency"
-        android:layout_alignBaseline="@+id/button4"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_toRightOf="@+id/button4"
-        android:layout_alignRight="@+id/browseListings_button"
-        android:layout_alignEnd="@+id/browseListings_button" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        android:background="@color/colorAccent"
-        android:elevation="24dp"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="Updates"
-        android:textSize="18sp"
-        android:onClick="clickedButton_updates"
-        android:minWidth="108dip"
-        android:layout_below="@+id/hello_text"
-        android:layout_alignRight="@+id/button9"
-        android:layout_alignEnd="@+id/button9" />
-
-    <Button
-        android:text="LOG OUT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logout_button"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:textColor="@android:color/background_light"
-        android:onClick="clickedButton_logout"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4" />
-
-    <Button
         android:text="Browse service listings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,19 +17,6 @@
         android:layout_marginTop="22dp"
         android:layout_below="@+id/makeRequest_button"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Rate my CarePear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button4"
-        android:textSize="16sp"
-        android:onClick="clickedButton_rateMyCarepear"
-        android:backgroundTint="#add8e6"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/browseListings_button"
-        android:layout_alignLeft="@+id/browseListings_button"
-        android:layout_alignStart="@+id/browseListings_button" />
 
     <Button
         android:text="Make a service request"
@@ -105,5 +45,81 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/makeRequest_button"
         android:layout_alignStart="@+id/makeRequest_button" />
+
+    <Button
+        android:text="EMERGENCY CONTACT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button9"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:onClick="clickedButton_emergency"
+        android:layout_below="@+id/browseListings_button"
+        android:layout_marginTop="28dp"
+        android:layout_alignLeft="@+id/browseListings_button"
+        android:layout_alignStart="@+id/browseListings_button" />
+
+    <Button
+        android:text="LOG OUT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout_button"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/background_light"
+        android:onClick="clickedButton_logout"
+        android:layout_marginBottom="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/browseListings_button"
+        android:layout_alignEnd="@+id/browseListings_button" />
+
+    <Button
+        android:text="CALL 9-1-1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b911"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:onClick="clickedButton_911"
+        android:layout_alignBaseline="@+id/button9"
+        android:layout_alignBottom="@+id/button9"
+        android:layout_alignRight="@+id/logout_button"
+        android:layout_alignEnd="@+id/logout_button"
+        android:layout_toRightOf="@+id/button9"
+        android:layout_toEndOf="@+id/button9" />
+
+    <Button
+        android:text="Rate my CarePear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:textSize="16sp"
+        android:onClick="clickedButton_rateMyCarepear"
+        android:backgroundTint="#add8e6"
+        android:layout_marginTop="64dp"
+        android:layout_below="@+id/hello_text"
+        android:layout_alignLeft="@+id/makeRequest_button"
+        android:layout_alignStart="@+id/makeRequest_button"
+        android:layout_toLeftOf="@+id/b911"
+        android:layout_toStartOf="@+id/b911" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:elevation="24dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:text="Updates"
+        android:textSize="18sp"
+        android:onClick="clickedButton_updates"
+        android:minWidth="108dip"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignRight="@+id/makeRequest_button"
+        android:layout_alignEnd="@+id/makeRequest_button"
+        android:textStyle="normal|bold" />
 
 </RelativeLayout>
